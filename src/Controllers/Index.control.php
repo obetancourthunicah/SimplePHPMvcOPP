@@ -27,7 +27,7 @@ class Index extends PublicController
      *
      * @return void
      */
-    public function run()
+    public function run() :void
     {
         \Views\Renderer::render("index", array("page"=>$this->toString()));
     }
