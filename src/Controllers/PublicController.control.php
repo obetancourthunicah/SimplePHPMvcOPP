@@ -39,6 +39,16 @@ abstract class PublicController implements IController
     {
         return $this->name;
     }
+    /**
+     * Returns if http method is a post or not
+     *
+     * @return boolean
+     */
+    protected function isPostBack()
+    {
+        return $_SERVER["REQUEST_METHOD"] == "POST";
+    }
+
 }
 
 ?>

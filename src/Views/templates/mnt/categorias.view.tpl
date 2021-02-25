@@ -18,9 +18,25 @@
         <td>{{catid}}</td>
         <td>{{catnom}}</td>
         <td>{{catest}}</td>
-        <td></td>
+        <td>
+          <form action="index.php" method="get">
+             <input type="hidden" name="page" value="mnt_categoria"/>
+              <input type="hidden" name="mode" value="UPD" />
+              <input type="hidden" name="catid" value={{catid}} />
+              <button type="submit">Editar</button>
+          </form>
+        </td>
       </tr>
       {{endfor items}}
     </tbody>
   </table>
 </section>
+<script>
+   document.addEventListener("DOMContentLoaded", function () {
+      document.getElementById("btnAdd").addEventListener("click", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        window.location.assign("index.php?page=mnt_categoria&mode=INS&catid=0");
+      });
+    });
+</script>
