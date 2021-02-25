@@ -19,12 +19,22 @@
         <option value="PLN" {{catest_PLN}}>Planificación</option>
       </select>
     </section>
+    {{if hasErrors}}
+        <section>
+          <ul>
+            {{foreach aErrors}}
+                <li>{{this}}</li>
+            {{endfor aErrors}}
+          </ul>
+        </section>
+    {{endif hasErrors}}
     <section>
       <button type="submit" name="btnGuardar" value="G">Guardar</button>
       <button type="button" id="btnCancelar">Cancelar</button>
     </section>
   </form>
 </section>
+
 
 <script>
   document.addEventListener("DOMContentLoaded", function(){

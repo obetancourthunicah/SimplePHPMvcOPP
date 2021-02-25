@@ -23,6 +23,13 @@ class Site
     public static function redirectTo($url)
     {
         header("Location:".$url);
+        die();
+    }
+    public static function redirectToWithMsg($url, $msg)
+    {
+        echo '<script>alert("'.$msg. '");';
+        echo ' window.location.assign("'.$url.'");</script>';
+        die();
     }
 }
 ?>

@@ -25,7 +25,7 @@ abstract class Table
             $pConn = self::getConn();
         }
         $query = $pConn->prepare($sqlstr);
-        foreach ($params as $key=>$value) {
+        foreach ($params as $key=>&$value) {
             $query->bindParam(":".$key, $value);
         }
         $query->execute();
@@ -42,7 +42,7 @@ abstract class Table
             $pConn = self::getConn();
         }
         $query = $pConn->prepare($sqlstr);
-        foreach ($params as $key => $value) {
+        foreach ($params as $key => &$value) {
             $query->bindParam(":" . $key, $value);
         }
         $query->execute();
@@ -60,7 +60,7 @@ abstract class Table
             $pConn = self::getConn();
         }
         $query = $pConn->prepare($sqlstr);
-        foreach ($params as $key => $value) {
+        foreach ($params as $key => &$value) {
             $query->bindParam(":" . $key, $value);
         }
         return $query->execute();

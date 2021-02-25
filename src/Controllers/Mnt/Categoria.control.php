@@ -18,6 +18,9 @@ class Categoria extends \Controllers\PublicController
         "DSP" => "%s %s"
     );
 
+    private $hasErrors = false;
+    private $aErrors = array();
+
     public function run() :void
     {
         /*
@@ -40,7 +43,25 @@ class Categoria extends \Controllers\PublicController
                 $this->mode_dsc = $this->mode_adsc[$this->mode];
             }
         } else {
-            
+            $this->_loadPostData();
+            if (!$this->hasErrors) {
+                switch ($this->mode){
+                case "INS":
+                    if (\Dao\Mnt\Categorias::insert($this->catnom, $this->catest)) {
+                        \Utilities\Site::redirectToWithMsg(
+                            "index.php?page=mnt_categorias",
+                            "¡Categoría Agregada Satisfactoriamente!"
+                        );
+                    }
+                    break;
+                case "UPD":
+                
+                    break;
+                case "DEL":
+                
+                    break;
+                }
+            }
         }
 
         $dataview = get_object_vars($this);
@@ -54,15 +75,36 @@ class Categoria extends \Controllers\PublicController
             $this->catid = $_data["catid"];
             $this->catnom = $_data["catnom"];
             $this->catest = $_data["catest"];
-            $this->catest_ACT = ($this->catest === "ACT") ? "selected":"";
-            $this->catest_INA = ($this->catest === "INA") ? "selected" : "";
-            $this->catest_PLN = ($this->catest === "PLN") ? "selected" : "";
-            $this->mode_dsc = sprintf(
-                $this->mode_adsc[$this->mode],
-                $this->catid,
-                $this->catnom
-            );
+            $this->_setViewData();
         }
+    }
+
+    private function _loadPostData()
+    {
+        $this->catid = isset($_POST["catid"]) ? $_POST["catid"] : 0 ;
+        $this->catnom = isset($_POST["catnom"]) ? $_POST["catnom"] : "" ;
+        $this->catest = isset($_POST["catest"]) ? $_POST["catest"] : "ACT" ;
+
+        //validaciones
+        //aplicar todas la reglas de negocio
+        if (preg_match('/^\s*$/', $this->catnom)) {
+            $this->aErrors[] = "¡La categoría no puede ir vacia!";
+        }
+        //
+        $this->hasErrors = (count($this->aErrors) > 0);
+        $this->_setViewData();
+    }
+
+    private function _setViewData()
+    {
+        $this->catest_ACT = ($this->catest === "ACT") ? "selected" : "";
+        $this->catest_INA = ($this->catest === "INA") ? "selected" : "";
+        $this->catest_PLN = ($this->catest === "PLN") ? "selected" : "";
+        $this->mode_dsc = sprintf(
+            $this->mode_adsc[$this->mode],
+            $this->catid,
+            $this->catnom
+        );
     }
 }
 
