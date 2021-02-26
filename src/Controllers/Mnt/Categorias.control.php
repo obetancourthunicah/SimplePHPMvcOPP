@@ -10,3 +10,5 @@ class Categorias extends \Controllers\PublicController
         \Views\Renderer::render("mnt/categorias", $dataview);
     }
 }
+
+// index.php?page=mnt_categorias
