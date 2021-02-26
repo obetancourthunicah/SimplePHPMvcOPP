@@ -18,6 +18,9 @@ class Categoria extends \Controllers\PublicController
         "DSP" => "%s %s"
     );
 
+    private $readonly = "";
+    private $showaction= true;
+
     private $hasErrors = false;
     private $aErrors = array();
 
@@ -55,10 +58,20 @@ class Categoria extends \Controllers\PublicController
                     }
                     break;
                 case "UPD":
-                
+                    if (\Dao\Mnt\Categorias::update($this->catnom, $this->catest, $this->catid)) {
+                        \Utilities\Site::redirectToWithMsg(
+                            "index.php?page=mnt_categorias",
+                            "¡Categoría Actualizada Satisfactoriamente!"
+                        );
+                    }
                     break;
                 case "DEL":
-                
+                    if (\Dao\Mnt\Categorias::delete($this->catid)) {
+                        \Utilities\Site::redirectToWithMsg(
+                            "index.php?page=mnt_categorias",
+                            "¡Categoría Eliminada Satisfactoriamente!"
+                        );
+                    }
                     break;
                 }
             }
@@ -105,6 +118,8 @@ class Categoria extends \Controllers\PublicController
             $this->catid,
             $this->catnom
         );
+        $this->readonly = ($this->mode =="DEL" || $this->mode=="DSP") ? "readonly":"";
+        $this->showaction = !($this->mode == "DSP");
     }
 }
 

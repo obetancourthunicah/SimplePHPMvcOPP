@@ -23,6 +23,23 @@ class Categorias extends \Dao\Table
             array("catnom"=>$catnom, "catest"=>$catest)
         );
     }
+    public static function update($catnom, $catest, $catid)
+    {
+        $updsql = "update categorias set catnom = :catnom , catest=:catest where catid=:catid;";
+        return self::executeNonQuery(
+            $updsql,
+            array("catnom" => $catnom, "catest" => $catest, "catid" => $catid)
+        );
+    }
+    public static function delete( $catid)
+    {
+        $delsql = "delete from categorias where catid=:catid;";
+        return self::executeNonQuery(
+            $delsql,
+            array( "catid" => $catid)
+        );
+    }
+
 }
 
 ?>

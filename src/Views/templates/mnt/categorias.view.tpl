@@ -16,7 +16,7 @@
       {{foreach items}}
       <tr>
         <td>{{catid}}</td>
-        <td>{{catnom}}</td>
+        <td><a href="index.php?page=mnt_categoria&mode=DSP&catid={{catid}}">{{catnom}}</a></td>
         <td>{{catest}}</td>
         <td>
           <form action="index.php" method="get">
@@ -24,6 +24,12 @@
               <input type="hidden" name="mode" value="UPD" />
               <input type="hidden" name="catid" value={{catid}} />
               <button type="submit">Editar</button>
+          </form>
+          <form action="index.php" method="get">
+             <input type="hidden" name="page" value="mnt_categoria"/>
+              <input type="hidden" name="mode" value="DEL" />
+              <input type="hidden" name="catid" value={{catid}} />
+              <button type="submit">Eliminar</button>
           </form>
         </td>
       </tr>
