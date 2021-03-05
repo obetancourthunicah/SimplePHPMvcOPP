@@ -26,6 +26,7 @@ class Dao {
             );
             $_user = \Utilities\Context::getContextByKey("DB_USER");
             $_pswd = \Utilities\Context::getContextByKey("DB_PSWD");
+            $_timezone = \Utilities\Context::getContextByKey("TIMEZONE");
             if ($dds !== null) {
                 $_dds = $dds;
             }
@@ -42,7 +43,8 @@ class Dao {
                 array(
                   \PDO::ATTR_EMULATE_PREPARES => false,
                   \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
-                  \PDO::ATTR_PERSISTENT => true
+                  \PDO::ATTR_PERSISTENT => true,
+                  \PDO::MYSQL_ATTR_INIT_COMMAND => "SET time_zone = '". $_timezone ."'"
                 )
             );
         }

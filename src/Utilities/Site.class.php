@@ -8,7 +8,7 @@ class Site
     {
         $donenv = new \Utilities\DotEnv("parameters.env");
         \Utilities\Context::setArrayToContext($donenv->load());
-        date_default_timezone_set("America/Tegucigalpa");
+        date_default_timezone_set(\Utilities\Context::getContextByKey("TIMEZONE"));
     }
     public static function getPageRequest()
     {
