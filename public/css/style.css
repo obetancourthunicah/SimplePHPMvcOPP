@@ -20,3 +20,7 @@ body {
   margin: 0px;
   border: 0px;
 }
+
+.WWList table tbody tr:nth-child(2n){
+  background-color: #c4c4c4;
+}

@@ -100,7 +100,7 @@ class Categoria extends \Controllers\PublicController
 
         //validaciones
         //aplicar todas la reglas de negocio
-        if (preg_match('/^\s*$/', $this->catnom)) {
+        if (\Utilities\Validator::IsEmpty($this->catnom)) {
             $this->aErrors[] = "¡La categoría no puede ir vacia!";
         }
         //
