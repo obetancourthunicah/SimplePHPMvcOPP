@@ -1,6 +1,6 @@
 <?php
 
-namespace Utilities
+namespace Utilities;
 
 abstract class Enum
 {
