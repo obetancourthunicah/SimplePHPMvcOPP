@@ -35,6 +35,7 @@ try {
     die();
 } catch(Error $ex)
 {
+    error_log($ex);
     $instance = new \Controllers\Error();
     $instance->run();
     die();

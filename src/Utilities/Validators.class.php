@@ -2,7 +2,7 @@
 
 namespace Utilities;
 
-class Validator {
+class Validators {
 
     static public function IsEmpty($valor)
     {

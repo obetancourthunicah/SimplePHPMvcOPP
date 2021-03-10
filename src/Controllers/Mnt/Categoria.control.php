@@ -100,7 +100,7 @@ class Categoria extends \Controllers\PublicController
 
         //validaciones
         //aplicar todas la reglas de negocio
-        if (\Utilities\Validator::IsEmpty($this->catnom)) {
+        if (\Utilities\Validators::IsEmpty($this->catnom)) {
             $this->aErrors[] = "¡La categoría no puede ir vacia!";
         }
         //
