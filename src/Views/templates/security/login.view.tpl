@@ -2,7 +2,7 @@
   <h1>Iniciar Sesión</h1>
 </section>
 <section>
-  <form method="post" action="index.php?page=sec_login">
+  <form method="post" action="index.php?page=sec_login{{if redirto}}&redirto={{redirto}}{{endif redirto}}">
     <div>
       <label for="txtEmail">Correo Electrónico</label>
       <input type="email" id="txtEmail" name="txtEmail" value="{{txtEmail}}" />
@@ -27,3 +27,4 @@
     </div>
   </form>
 </section>
+{{redirto}}

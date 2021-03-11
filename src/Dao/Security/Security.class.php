@@ -46,7 +46,7 @@ class Security extends \Dao\Table
         $newUser["username"] = "John Doe";
         $newUser["userpswd"] = $hashedPassword;
         $newUser["userpswdest"] = Estados::ACTIVO;
-        $newUser["userpswdexp"] = date('Y-m-d', time() + (3*30*24*60*60));
+        $newUser["userpswdexp"] = date('Y-m-d', time() + 7776000);  //(3*30*24*60*60) (m d h mi s)
         $newUser["userest"] = Estados::ACTIVO;
         $newUser["useractcod"] = hash("sha256", $email.time());
         $newUser["usertipo"] = UsuarioTipo::PUBLICO;
@@ -113,6 +113,21 @@ class Security extends \Dao\Table
             "userpswdchg"  => "",
             "usertipo"     => "",
         );
+    }
+
+    static public function getFeatureByUsuario($userCod, $fncod)
+    {
+        $sqlstr = "select * from
+    funciones_roles a inner join roles_usuarios b on a.rolescod = b.rolescod
+    where a.fnrolest = 'ACT' and b.usercod=:usercod and a.fncod=:fncod limit 1;";
+        $resultados = self::obtenerRegistros(
+            $sqlstr,
+            array(
+                "usercod"=> $userCod,
+                "fncod" => $fncod
+            )
+        );
+        return count($resultados) > 0;
     }
 
     private function __construct()

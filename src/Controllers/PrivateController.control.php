@@ -24,15 +24,26 @@ abstract class PrivateController extends PublicController
 {
     private function _isAuthorized()
     {
-        throw new PrivateNoAuthException();
+        $isAuthorized = \Utilities\Security::isAuthorized(
+            \Utilities\Security::getUserId(),
+            $this->name
+        );
+        if (!$isAuthorized){
+            throw new PrivateNoAuthException();
+        }
     }
     private function _isAuthenticated()
     {
-        throw new PrivateNoLoggedException();
+        if (!\Utilities\Security::isLogged()){
+            throw new PrivateNoLoggedException();
+        }
     }
-    private function _isFeatureAutorized($feature) :boolean
+    protected function isFeatureAutorized($feature) :boolean
     {
-        return false;
+        return \Utilities\Security::isAuthorized(
+            \Utilities\Security::getUserId(),
+            $feature
+        );
     }
     public function __construct()
     {

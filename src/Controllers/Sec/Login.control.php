@@ -50,9 +50,19 @@ class Login extends \Controllers\PublicController
                         // Aqui se debe establecer acciones segun la politica de la institucion.
                     }
                     if (! $this->hasError) {
-                        die("Login OK");
+                        \Utilities\Security::login(
+                            $dbUser["usercod"],
+                            $dbUser["username"],
+                            $dbUser["useremail"]
+                        );
+                        if (\Utilities\Context::getContextByKey("redirto") !== "") {
+                            \Utilities\Site::redirectTo(
+                                \Utilities\Context::getContextByKey("redirto")
+                            );
+                        } else {
+                            \Utilities\Site::redirectTo("index.php");
+                        }
                     }
-                    
                 } else {
                     error_log(
                         sprintf(
