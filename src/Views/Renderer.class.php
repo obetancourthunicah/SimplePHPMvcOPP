@@ -113,6 +113,7 @@ class Renderer
         $ifCondition = false;
         $ifNotIsOpen = false;
         $ifNotCondition = false;
+        $withIsOpen = false;
         $innerBlock = array();
         $currentContext = "";
 
@@ -124,6 +125,29 @@ class Renderer
         }
 
         foreach ($template_block as $node) {
+            //buscando si es un cierre de with
+            if (strpos($node, "{{endwith $currentContext}}") !== false) {
+                if ($withIsOpen) {
+                    $withIsOpen = false;
+                    if (strpos($currentContext, "~") !== false) {
+                        $withContext = $root[str_replace("~", "", $currentContext)];
+                    } elseif (strpos($currentContext, "&") !== false) {
+                        $withContext = $parent[str_replace("&", "", $currentContext)];
+                    } else {
+                        $withContext = $context[str_replace("&", "", $currentContext)];
+                    }
+                    $renderedHTML .=
+                        self::_renderTemplate(
+                            $innerBlock,
+                            $withContext,
+                            $context,
+                            $root
+                        );
+                    $innerBlock = array();
+                    $currentContext = "";
+                    continue;
+                }
+            }
             //buscando si es un cierre de foreach
             if (strpos($node, "{{endfor $currentContext}}") !== false) {
                 if ($foreachIsOpen) {
@@ -202,9 +226,20 @@ class Renderer
                 }
             }
 
-            if ($foreachIsOpen || $ifIsOpen || $ifNotIsOpen) {
+            if ($foreachIsOpen || $ifIsOpen || $ifNotIsOpen || $withIsOpen) {
                 $innerBlock[] = $node;
                 continue;
+            }
+
+            //buscando si es una apertura de with
+            if (strpos($node, "{{with") !== false) {
+                if (!$withIsOpen) {
+                    $withIsOpen = true;
+                    $currentContext = trim(
+                        str_replace("}}", "", str_replace("{{with", "", $node))
+                    );
+                    continue;
+                }
             }
 
             //buscando si es una apertura de foreach
@@ -224,8 +259,21 @@ class Renderer
                     $currentContext = trim(
                         str_replace("}}", "", str_replace("{{ifnot", "", $node))
                     );
-                    if (isset($context[$currentContext])) {
-                        $ifNotCondition = ($context[$currentContext]) == false;
+                    $ifNotCondition = false;
+                    if (strpos($currentContext, "~") !== false) {
+                        $tmpCurrentContext = str_replace("~", "", $currentContext);
+                        if (isset($root[$tmpCurrentContext])) {
+                            $ifNotCondition = ($root[$tmpCurrentContext]) == false;
+                        }
+                    } elseif (strpos($currentContext, "&") !== false) {
+                        $tmpCurrentContext = str_replace("&", "", $currentContext);
+                        if (isset($parent[$tmpCurrentContext])) {
+                            $ifNotCondition = ($parent[$tmpCurrentContext]) == false;
+                        }
+                    } else {
+                        if (isset($context[$currentContext])) {
+                            $ifNotCondition = ($context[$currentContext]) == false;
+                        }
                     }
                     continue;
                 }
@@ -237,8 +285,21 @@ class Renderer
                     $currentContext = trim(
                         str_replace("}}", "", str_replace("{{if", "", $node))
                     );
-                    if (isset($context[$currentContext])) {
-                        $ifCondition = ($context[$currentContext]) && true;
+                    $ifCondition = false;
+                    if (strpos($currentContext, "~") !== false) {
+                        $tmpCurrentContext = str_replace("~", "", $currentContext);
+                        if (isset($root[$tmpCurrentContext])) {
+                            $ifCondition = ($root[$tmpCurrentContext]) && true;
+                        }
+                    } elseif (strpos($currentContext, "&") !== false) {
+                        $tmpCurrentContext = str_replace("&", "", $currentContext);
+                        if (isset($parent[$tmpCurrentContext])) {
+                            $ifCondition = ($parent[$tmpCurrentContext])  && true;
+                        }
+                    } else {
+                        if (isset($context[$currentContext])) {
+                            $ifCondition = ($context[$currentContext]) && true;
+                        }
                     }
                     continue;
                 }
@@ -293,12 +354,14 @@ class Renderer
     private static function _parseTemplate($htmlTemplate)
     {
         $regexp_array = array(
-          'foreach'       => '(\{\{foreach [~&]?\w*\}\})',
+          'foreach'      => '(\{\{foreach [~&]?\w*\}\})',
           'endfor'       => '(\{\{endfor [~&]?\w*\}\})',
-          'if'           => '(\{\{if \w*\}\})',
-          'if_not'       => '(\{\{ifnot \w*\}\})',
-          'if_close'     => '(\{\{endif \w*\}\})',
-          'ifnot_close'  => '(\{\{endifnot \w*\}\})'
+          'if'           => '(\{\{if [~&]?\w*\}\})',
+          'if_not'       => '(\{\{ifnot [~&]?\w*\}\})',
+          'if_close'     => '(\{\{endif [~&]?\w*\}\})',
+          'ifnot_close'  => '(\{\{endifnot [~&]?\w*\}\})',
+          'with'         => '(\{\{with [~&]?\w*\}\})',
+          'with_close'   => '(\{\{endwith [~&]?\w*\}\})'
         );
 
         $tag_regexp = "/" . join("|", $regexp_array) . "/";

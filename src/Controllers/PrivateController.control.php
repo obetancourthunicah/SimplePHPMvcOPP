@@ -50,6 +50,14 @@ abstract class PrivateController extends PublicController
         $this->name = get_class($this);
         $this->_isAuthenticated();
         $this->_isAuthorized();
+
+        $layoutFile = \Utilities\Context::getContextByKey("PRIVATE_LAYOUT");
+        if ($layoutFile !== "") {
+            \Utilities\Context::setContext(
+                "layoutFile",
+                $layoutFile
+            );
+        }
     }
 }
 

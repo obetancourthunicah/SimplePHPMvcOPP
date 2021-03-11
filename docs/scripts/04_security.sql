@@ -35,7 +35,7 @@ CREATE TABLE `roles_usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `funciones` (
-  `fncod` varchar(15) NOT NULL,
+  `fncod` varchar(255) NOT NULL,
   `fndsc` varchar(45) DEFAULT NULL,
   `fnest` char(3) DEFAULT NULL,
   `fntyp` char(3) DEFAULT NULL,
@@ -44,7 +44,7 @@ CREATE TABLE `funciones` (
 
 CREATE TABLE `funciones_roles` (
   `rolescod` varchar(15) NOT NULL,
-  `fncod` varchar(15) NOT NULL,
+  `fncod` varchar(255) NOT NULL,
   `fnrolest` char(3) DEFAULT NULL,
   `fnexp` datetime DEFAULT NULL,
   PRIMARY KEY (`rolescod`,`fncod`),
@@ -57,7 +57,7 @@ CREATE TABLE `funciones_roles` (
 CREATE TABLE `bitacora` (
   `bitacoracod` int(11) NOT NULL AUTO_INCREMENT,
   `bitacorafch` datetime DEFAULT NULL,
-  `bitprograma` varchar(15) DEFAULT NULL,
+  `bitprograma` varchar(255) DEFAULT NULL,
   `bitdescripcion` varchar(255) DEFAULT NULL,
   `bitobservacion` mediumtext,
   `bitTipo` char(3) DEFAULT NULL,
