@@ -44,11 +44,23 @@ class Security {
     }
     public static function isAuthorized($userId, $function):bool
     {
+        if (\Utilities\Context::getContextByKey("DEVELOPMENT") == "1") {
+            $functionInDb = \Dao\Security\Security::getFeature($function);
+            if (!$functionInDb) {
+                \Dao\Security\Security::addNewFeature($function, $function, "ACT", "CTR");
+            }
+        }
         return \Dao\Security\Security::getFeatureByUsuario($userId, $function);
     }
     public static function isInRol($userId, $rol):bool
     {
-        return true;
+        if (\Utilities\Context::getContextByKey("DEVELOPMENT") == "1") {
+            $rolInDb = \Dao\Security\Security::getRol($rol);
+            if (!$rolInDb) {
+                \Dao\Security\Security::addNewRol($rol, $rol, "ACT");
+            }
+        }
+        return \Dao\Security\Security::getRolesByUsuario($userId, $rol);
     }
 }
 

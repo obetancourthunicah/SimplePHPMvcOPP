@@ -98,6 +98,7 @@ class Security extends \Dao\Table
         );
     }
 
+
     static private function _usuarioStruct()
     {
         return array(
@@ -115,6 +116,29 @@ class Security extends \Dao\Table
         );
     }
 
+    static public function getFeature($fncod)
+    {
+        $sqlstr = "SELECT * from funciones where fncod=:fncod;";
+        $featuresList = self::obtenerRegistros($sqlstr, array("fncod"=>$fncod));
+        return count($featuresList) > 0;
+    }
+
+    static public function addNewFeature($fncod, $fndsc, $fnest, $fntyp )
+    {
+        $sqlins = "INSERT INTO `funciones` (`fncod`, `fndsc`, `fnest`, `fntyp`)
+            VALUES (:fncod , :fndsc , :fnest , :fntyp );";
+
+        return self::executeNonQuery(
+            $sqlins,
+            array(
+                "fncod" => $fncod,
+                "fndsc" => $fndsc,
+                "fnest" => $fnest,
+                "fntyp" => $fntyp
+            )
+        );
+    }
+
     static public function getFeatureByUsuario($userCod, $fncod)
     {
         $sqlstr = "select * from
@@ -129,6 +153,44 @@ class Security extends \Dao\Table
         );
         return count($resultados) > 0;
     }
+
+    static public function getRol($rolescod)
+    {
+        $sqlstr = "SELECT * from roles where rolescod=:rolescod;";
+        $featuresList = self::obtenerRegistros($sqlstr, array("rolescod" => $rolescod));
+        return count($featuresList) > 0;
+    }
+
+    static public function addNewRol($rolescod, $rolesdsc, $rolesest)
+    {
+        $sqlins = "INSERT INTO `roles` (`rolescod`, `rolesdsc`, `rolesest`)
+    VALUES (:rolescod, :rolesdsc, :rolesest);";
+
+        return self::executeNonQuery(
+            $sqlins,
+            array(
+                "rolescod" => $rolescod,
+                "rolesdsc" => $rolesdsc,
+                "rolesest" => $rolesest
+            )
+        );
+    }
+
+    static public function getRolesByUsuario($userCod, $rolescod)
+    {
+        $sqlstr = "select * from roles a inner join
+        roles_usuarios b on a.rolescod = b.rolescod where a.rolesest = 'ACT'
+        and b.usercod=:usercod and a.rolescod=:rolescod limit 1;";
+        $resultados = self::obtenerRegistros(
+            $sqlstr,
+            array(
+                "usercod" => $userCod,
+                "rolescod" => $rolescod
+            )
+        );
+        return count($resultados) > 0;
+    }
+
 
     private function __construct()
     {
