@@ -1,0 +1,17 @@
+<phpdoc>
+  <parser>
+    <target>data/output</target>
+  </parser>
+  <transformer>
+    <target>data/output</target>
+  </transformer>
+  <files>
+    <file>index.php</file>
+    <directory>src</directory>
+  </files>
+  <transformations>
+        <template name="clean"/>
+        <template name="checkstyle"/>
+        <template name="responsive"/>
+    </transformations>
+</phpdoc>

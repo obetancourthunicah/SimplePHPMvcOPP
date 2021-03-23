@@ -1,0 +1,9 @@
+{
+    "require": {
+        "phpdocumentor/phpdocumentor": "^3.0",
+        "leafo/lessphp": "^0.5.0"
+    },
+    "scripts" :{
+      "docs": "./vendor/phpdocumentor/phpdocumentor/bin/phpdoc -t ./docs/manual_tecnico"
+    }
+}

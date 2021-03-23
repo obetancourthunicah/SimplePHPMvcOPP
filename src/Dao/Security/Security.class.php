@@ -142,8 +142,9 @@ class Security extends \Dao\Table
     static public function getFeatureByUsuario($userCod, $fncod)
     {
         $sqlstr = "select * from
-    funciones_roles a inner join roles_usuarios b on a.rolescod = b.rolescod
-    where a.fnrolest = 'ACT' and b.usercod=:usercod and a.fncod=:fncod limit 1;";
+        funciones_roles a inner join roles_usuarios b on a.rolescod = b.rolescod
+        where a.fnrolest = 'ACT' and b.roleuserest='ACT' and b.usercod=:usercod
+        and a.fncod=:fncod limit 1;";
         $resultados = self::obtenerRegistros(
             $sqlstr,
             array(
@@ -164,7 +165,7 @@ class Security extends \Dao\Table
     static public function addNewRol($rolescod, $rolesdsc, $rolesest)
     {
         $sqlins = "INSERT INTO `roles` (`rolescod`, `rolesdsc`, `rolesest`)
-    VALUES (:rolescod, :rolesdsc, :rolesest);";
+        VALUES (:rolescod, :rolesdsc, :rolesest);";
 
         return self::executeNonQuery(
             $sqlins,
@@ -191,7 +192,33 @@ class Security extends \Dao\Table
         return count($resultados) > 0;
     }
 
+    static public function removeRolFromUser($userCod, $rolescod)
+    {
+        $sqldel = "UPDATE roles_usuarios set roleuserest='INA' 
+        where rolescod=:rolescod and usercod=:usercod;";
+        return self::executeNonQuery(
+            $sqldel,
+            array("rolescod"=>$rolescod, "usercod"=>$userCod)
+        );
+    }
 
+    static public function removeFeatureFromRol($fncod, $rolescod)
+    {
+        $sqldel = "UPDATE funciones_roles set roleuserest='INA'
+        where fncod=:fncod and rolescod=:rolescod;";
+        return self::executeNonQuery(
+            $sqldel,
+            array("fncod" => $fncod, "rolescod" => $rolescod)
+        );
+    }
+    static public function getUnAssignedFeatures($rolescod)
+    {
+        
+    }
+    static public function getUnAssignedRoles($userCod)
+    {
+
+    }
     private function __construct()
     {
     }
