@@ -1,7 +1,7 @@
 <?php 
 namespace Controllers\Mnt;
 
-class Categoria extends \Controllers\PublicController
+class Categoria extends \Controllers\PrivateController
 {
     private $catid = 0;
     private $catnom = "";

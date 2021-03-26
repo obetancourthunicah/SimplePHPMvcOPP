@@ -58,6 +58,7 @@ abstract class PrivateController extends PublicController
                 $layoutFile
             );
         }
+        \Utilities\Nav::setNavContext();
     }
 }
 

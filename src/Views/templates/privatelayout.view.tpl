@@ -25,6 +25,9 @@
           <li><span>{{userName}}</span></li>
         {{endwith login}}
         <li><a href="index.php?page=admin_admin">Inicio</a></li>
+        {{foreach NAVIGATION}}
+            <li><a href="{{nav_url}}">{{nav_label}}</a></li>
+        {{endfor NAVIGATION}}
         <li><a href="index.php?page=sec_logout">Salir</a></li>
       </ul>
     </nav>

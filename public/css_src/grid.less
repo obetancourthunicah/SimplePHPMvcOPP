@@ -1,0 +1,55 @@
+.generateCols(@column, @break) when (@column > 0) {
+  @width : 100 / 12 * @column;
+
+  .col@{break}-@{column} {
+    flex-basis:~"@{width}%";
+    max-width:~"@{width}%";
+  }
+
+  .offset@{break}-@{column} {
+    margin-left:~"@{width}" !important;
+  }
+
+  .order@{break}-@{column} {
+    order:~"@{column}";
+  }
+
+  .generateCols((@column - 1), @break);
+}
+
+.row {
+  flex-direction: row;
+
+  &.reverse {
+    flex-direction: row-reverse;
+  }
+}
+
+.column {
+  flex-direction: column;
+
+  &.reverse {
+    flex-direction: column-reverse;
+  }
+}
+
+.row, .column {
+  box-sizing: border-box;
+  display: flex;
+  flex: 0 1 auto;
+  flex-wrap: wrap;
+}
+
+.generateCols(12, e(''));
+
+@media @md {
+  .generateCols(12, e("-md"));
+}
+
+@media @lg {
+  .generateCols(12, e("-lg"));
+}
+
+@media @xl {
+  .generateCols(12, e("-xl"));
+}
