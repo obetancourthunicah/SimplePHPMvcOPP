@@ -15,23 +15,23 @@ abstract class Table
         }
         return self::$_conn;
     }
-
+    private static $_bindMapping = array(
+        "boolean" => \PDO::PARAM_BOOL,
+        "integer" => \PDO::PARAM_INT,
+        "double"  => \PDO::PARAM_STR,
+        "string" => \PDO::PARAM_STR,
+        "array" => \PDO::PARAM_STR,
+        "object" => \PDO::PARAM_STR,
+        "resource" => \PDO::PARAM_STR,
+        "NULL" => \PDO::PARAM_NULL,
+        "unknown type" => \PDO::PARAM_STR
+    );
     protected static function getBindType($value)
     {
         $valueType = gettype($value);
-        $bindMapping = array(
-            "boolean" => \PDO::PARAM_BOOL ,
-            "integer" => \PDO::PARAM_INT ,
-            "double"  => \PDO::PARAM_STR ,
-            "string" => \PDO::PARAM_STR ,
-            "array" => \PDO::PARAM_STR ,
-            "object" => \PDO::PARAM_STR ,
-            "resource" => \PDO::PARAM_STR ,
-            "NULL" => \PDO::PARAM_NULL ,
-            "unknown type" => \PDO::PARAM_STR
-        );
+        
 
-        return $bindMapping[$valueType];
+        return self::$_bindMapping[$valueType];
         /*
         "boolean"
         "integer"
