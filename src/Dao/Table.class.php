@@ -16,6 +16,46 @@ abstract class Table
         return self::$_conn;
     }
 
+    protected static function getBindType($value)
+    {
+        $valueType = gettype($value);
+        $bindMapping = array(
+            "boolean" => \PDO::PARAM_BOOL ,
+            "integer" => \PDO::PARAM_INT ,
+            "double"  => \PDO::PARAM_STR ,
+            "string" => \PDO::PARAM_STR ,
+            "array" => \PDO::PARAM_STR ,
+            "object" => \PDO::PARAM_STR ,
+            "resource" => \PDO::PARAM_STR ,
+            "NULL" => \PDO::PARAM_NULL ,
+            "unknown type" => \PDO::PARAM_STR
+        );
+
+        return $bindMapping[$valueType];
+        /*
+        "boolean"
+        "integer"
+        "double" (por razones históricas "double" es devuelto en caso de que un valor sea de tipo float, y no simplemente "float")
+        "string"
+        "array"
+        "object"
+        "resource"
+        "NULL"
+        "unknown type"
+        */
+        /*
+        PDO::PARAM_BOOL (integer)
+        Representa un tipo de dato booleano.
+        PDO::PARAM_NULL (integer)
+        Representa el tipo de dato NULL de SQL.
+        PDO::PARAM_INT (integer)
+        Representa el tipo de dato INTEGER de SQL .
+        PDO::PARAM_STR (integer)
+        Representa el tipo de dato CHAR, VARCHAR de SQL, u otro tipo de datos de cadena.
+         */
+
+    }
+
     protected static function obtenerRegistros($sqlstr, $params, &$conn = null)
     {
         $pConn = null;
@@ -26,7 +66,7 @@ abstract class Table
         }
         $query = $pConn->prepare($sqlstr);
         foreach ($params as $key=>&$value) {
-            $query->bindParam(":".$key, $value);
+            $query->bindParam(":".$key, $value, self::getBindType($value));
         }
         $query->execute();
         $query->setFetchMode(\PDO::FETCH_ASSOC);
@@ -43,7 +83,7 @@ abstract class Table
         }
         $query = $pConn->prepare($sqlstr);
         foreach ($params as $key => &$value) {
-            $query->bindParam(":" . $key, $value);
+            $query->bindParam(":" . $key, $value, self::getBindType($value));
         }
         $query->execute();
         $query->setFetchMode(\PDO::FETCH_ASSOC);
@@ -61,7 +101,7 @@ abstract class Table
         }
         $query = $pConn->prepare($sqlstr);
         foreach ($params as $key => &$value) {
-            $query->bindParam(":" . $key, $value);
+            $query->bindParam(":" . $key, $value, self::getBindType($value));
         }
         return $query->execute();
     }
