@@ -19,6 +19,7 @@ class Nav {
                 "nav_label" => "Usuarios"
             );
         }
+       
         \Utilities\Context::setContext("NAVIGATION", $tmpNAVIGATION);
     }
 

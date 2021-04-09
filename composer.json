@@ -1,7 +1,8 @@
 {
     "require": {
         "phpdocumentor/phpdocumentor": "^3.0",
-        "leafo/lessphp": "^0.4.0"
+        "leafo/lessphp": "^0.4.0",
+        "paypal/paypal-checkout-sdk": "1.0.1"
     },
     "scripts" :{
       "docs": "./vendor/phpdocumentor/phpdocumentor/bin/phpdoc -t ./docs/manual_tecnico",
