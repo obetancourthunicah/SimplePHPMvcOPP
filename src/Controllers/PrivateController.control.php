@@ -38,7 +38,7 @@ abstract class PrivateController extends PublicController
             throw new PrivateNoLoggedException();
         }
     }
-    protected function isFeatureAutorized($feature) :boolean
+    protected function isFeatureAutorized($feature) :bool
     {
         return \Utilities\Security::isAuthorized(
             \Utilities\Security::getUserId(),
@@ -47,18 +47,10 @@ abstract class PrivateController extends PublicController
     }
     public function __construct()
     {
-        $this->name = get_class($this);
+        parent::__construct();
         $this->_isAuthenticated();
         $this->_isAuthorized();
 
-        $layoutFile = \Utilities\Context::getContextByKey("PRIVATE_LAYOUT");
-        if ($layoutFile !== "") {
-            \Utilities\Context::setContext(
-                "layoutFile",
-                $layoutFile
-            );
-        }
-        \Utilities\Nav::setNavContext();
     }
 }
 

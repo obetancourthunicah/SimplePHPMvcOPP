@@ -7,7 +7,7 @@
   <title>{{SITE_TITLE}}</title>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="public/css/style.css" />
+  <link rel="stylesheet" href="/{{BASE_DIR}}/public/css/appstyle.css" />
   {{foreach SiteLinks}}
   <link rel="stylesheet" href="{{this}}" />
   {{endfor SiteLinks}}

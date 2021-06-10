@@ -29,7 +29,6 @@ abstract class Table
     protected static function getBindType($value)
     {
         $valueType = gettype($value);
-        
 
         return self::$_bindMapping[$valueType];
         /*

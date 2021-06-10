@@ -29,6 +29,16 @@ abstract class PublicController implements IController
     public function __construct()
     {
         $this->name = get_class($this);
+        if (\Utilities\Security::isLogged()){
+            $layoutFile = \Utilities\Context::getContextByKey("PRIVATE_LAYOUT");
+            if ($layoutFile !== "") {
+                \Utilities\Context::setContext(
+                    "layoutFile",
+                    $layoutFile
+                );
+                \Utilities\Nav::setNavContext();
+            }
+        }
     }
     /**
      * Return name of instantiated class
@@ -42,7 +52,7 @@ abstract class PublicController implements IController
     /**
      * Returns if http method is a post or not
      *
-     * @return boolean
+     * @return bool
      */
     protected function isPostBack()
     {

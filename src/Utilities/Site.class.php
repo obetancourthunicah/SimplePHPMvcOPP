@@ -25,7 +25,12 @@ class Site
     }
     public static function redirectTo($url)
     {
-        header("Location:".$url);
+        if (Context::getContextByKey("USE_URLREWRITE") == "1") {
+            header("Location:" . \Views\Renderer::rewriteUrl($url));
+        } else { 
+            header("Location:" . $url);
+        }
+        
         die();
     }
     public static function redirectToWithMsg($url, $msg)
