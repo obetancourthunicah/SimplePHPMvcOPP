@@ -1,0 +1,38 @@
+label {
+  font-weight: 700;
+}
+
+input {
+  font-size: 1rem;
+  padding: 0.75rem 0.5rem;
+  border: 1px solid @primary_bg300;
+}
+
+input.width-full {
+  width: 100%;
+}
+
+button {
+  background-color: @primary_bg300;
+  color: @primary_text;
+  border: solid 2px @primary_bg300;
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var();
+  box-shadow: 1px 1px 3px @primary_bg;
+}
+
+button.primary {
+  background-color: @primary_action_bg;
+  color: @primary_action_tx;
+  border: solid 2px darken(@primary_action_bg, 20%);
+}
+
+button.primary:hover {
+  box-shadow: 1px 1px 3px @primary_action_bg;
+}

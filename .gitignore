@@ -1,2 +1,6 @@
 parameters.env
 .DS_Store
+vendor
+.phpdoc
+data
+.vscode

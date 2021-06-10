@@ -1,0 +1,166 @@
+@import url("colors.css");
+@import url("grid.css");
+@import url("form.css");
+*{
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size:100%;
+  font-size:16px;
+  font-size:1em;
+  margin:0px;
+  padding:0px;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--primary_bg);
+  color: var(--primary_text);
+  padding:0px;
+  flex-wrap: wrap;
+}
+header h1{
+  margin:0px;
+  padding:0.75rem 1rem;
+  font-size: 1.5rem;
+}
+header nav ul{
+  display: flex;
+  justify-content: stretch;
+  align-items: center;
+  padding:0px;
+  list-style: none;
+  margin:0px;
+}
+header ul li a, header ul li span{
+  display: flex;
+  padding:1rem;
+  color:var(--primary_text);
+  text-decoration: none;
+  transition: background-color 0.5s ease;
+}
+header ul li a:hover{
+  background-color: var(--primary_bg300);
+  transition: background-color 0.5s ease;
+}
+.WWList table{
+  width:100%;
+  margin: 0px;
+  -webkit-border-horizontal-spacing:0px;
+  -webkit-border-vertical-spacing:0px;
+}
+
+.WWList table thead{
+  background-color: #888;
+}
+
+.WWList table thead th, .WWList table tbody td{
+  padding:0.35em 0.5em;
+  margin: 0px;
+  border: 0px;
+}
+
+.WWList table tbody tr:nth-child(2n){
+  background-color: #c4c4c4;
+}
+main {
+  position: relative;
+  padding:1em;
+  min-height: calc(100vh - 154px);
+}
+footer{
+  background-color: var(--primary_bg);
+  color:var(--primary_text);
+  display:flex;
+  justify-content: center;
+  align-items:center;
+  padding:1rem;
+}
+/*
+--sm: 640px;
+  --md: 768px;
+  --lg: 1024px;
+  --xl: 1280px;
+  --xxl: 1536px;
+*/
+
+.depth-0{
+  box-shadow: 0px 0px 3px var(--primary_bg);
+}
+.depth-1{
+  box-shadow: 1px 1px 3px var(--primary_bg);
+}
+.depth-2{
+  box-shadow: 3px 3px 5px var(--primary_bg);
+}
+.depth-3{
+  box-shadow: 3px 3px 7px var(--primary_bg);
+}
+
+.py-0{
+  padding-top:0rem !important;
+  padding-bottom:0rem !important;
+}
+.py-1{
+  padding-top:0.1rem !important;
+  padding-bottom:0.1rem !important;
+}
+
+.py-2{
+  padding-top:0.25rem !important;
+  padding-bottom:0.25rem !important;
+}
+
+.py-3{
+  padding-top:0.5rem !important;
+  padding-bottom:0.5rem !important;
+}
+.py-4{
+  padding-top:1rem !important;
+  padding-bottom:1rem !important;
+}
+.py-5{
+  padding-top:1.5rem !important;
+  padding-bottom:1.5rem !important;
+}
+
+.right {
+  text-align: right;
+}
+.center {
+  text-align: center;
+}
+
+.error {
+  font-size:0.9rem;
+  color: var(--alert);
+}
+
+@media (min-width: 640px){
+
+}
+
+@media (min-width: 768px){
+  header {
+    flex-direction: row;
+  }
+  main {
+    min-height: calc(100vh - 102px);
+  }
+}
+
+@media (min-width: 1024px){
+  
+}
+
+@media (min-width: 1280px){
+  
+}
+
+@media (min-width: 1536){
+  
+}
