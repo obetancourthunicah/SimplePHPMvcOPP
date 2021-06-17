@@ -1,5 +1,18 @@
+<h1>{{page}}</h1>
+<h2>{{algoMas}}</h2>
+
 <section>
-  Aqui va un hero panel del piano
+  {{foreach heroes}}
+    <section class="hero">
+      <img src="/{{~BASE_DIR}}/{{heroimgurl}}">
+      <section class="action">
+          {{heroname}}
+          <br/>
+          {{heroaction}}
+      </section>
+      <hr/>
+    </section>
+  {{endfor heroes}}
 </section>
 <section>
   Top 5 Pianos a la venta

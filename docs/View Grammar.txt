@@ -1,0 +1,23 @@
+{
+  site_name: "abc",
+  css: [
+    { url:"" , rel:""}
+    { url:"" , rel:""}
+    { url:"" , rel:""}
+  ],
+  navs:[
+    {id:"", label:"" , url:"", keys: ["color", "data", "noKey"]}
+    {id:"", label:"" , url:""}
+    {id:"", label:"" , url:""}
+  ]
+}
+
+{{foreach navs}}
+    <li>
+        {{lable}} -- {{~site_name}}
+        {{foreach keys}}
+          <p>{{this}}</p>
+          <button value="{{&id}}_{{~site_name}}_{{this}}">Eliminar</button>
+        {{endfor keys}}
+    </li>
+{{endfor navs}}
