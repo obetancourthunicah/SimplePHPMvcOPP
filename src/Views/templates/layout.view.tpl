@@ -8,10 +8,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/{{BASE_DIR}}/public/css/appstyle.css" />
   {{foreach SiteLinks}}
-    <link rel="stylesheet" href="{{this}}" />
+    <link rel="stylesheet" href="/{{~BASE_DIR}}/{{this}}" />
   {{endfor SiteLinks}}
   {{foreach BeginScripts}}
-    <script src="{{this}}"></script>
+    <script src="/{{~BASE_DIR}}/{{this}}"></script>
   {{endfor BeginScripts}}
 </head>
 <body>
@@ -32,7 +32,7 @@
     <div>Todo los Derechos Reservados 2021 &copy;</div>
   </footer>
   {{foreach EndScripts}}
-    <script src="{{this}}"></script>
+    <script src="/{{~BASE_DIR}}/{{this}}"></script>
   {{endfor EndScripts}}
 </body>
 </html>

@@ -1,3 +1,10 @@
-<h1>Hola Mundo Renderizado</h1>
-<p>{{DB_SERVER}}</p>
-<p>{{page}}</p>
+<section>
+  Aqui va un hero panel del piano
+</section>
+<section>
+  Top 5 Pianos a la venta
+</section>
+
+<section>
+  Top 5 Partituras
+</section>
