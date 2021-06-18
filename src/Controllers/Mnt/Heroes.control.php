@@ -15,7 +15,6 @@ class Heroes extends \Controllers\PublicController {
             $viewData["heroes"][] = $heroes;
         }
 
-
         \Views\Renderer::render("mnt/heroes", $viewData);
     }
 }
