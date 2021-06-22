@@ -2,12 +2,21 @@
 
 namespace Controllers\Mnt;
 
-class Heroe extends \Controllers\PublicController 
+use Utilities\ArrUtils;
+
+class Heroe extends \Controllers\PublicController
 {
 
     public function run():void
     {
         $viewData = array();
+        $ModalTitles = array(
+            "INS" => "Nuevo Hero Panel",
+            "UPD" => "Actualiza %s %s",
+            "DSP" => "Detalle de %s %s",
+            "DEL" => "Eliminado %s %s"
+        );
+
         $viewData["ModalTitle"] = "";
         $viewData["heroItemid"] = 0;
         $viewData["heroname"] = "";
@@ -26,8 +35,32 @@ class Heroe extends \Controllers\PublicController
             $viewData["heroaction"] = $_POST["heroaction"];
             $viewData["heroorder"] = $_POST["heroorder"];
             $viewData["heroest"] = $_POST["heroest"];
+           
+        } else {
+            $viewData["mode"] = $_GET["mode"];
+            $viewData["heroItemid"] = isset($_GET["id"])? $_GET["id"] : 0;
+        }
+
+        //Visualizar los Datos
+        if ($viewData["mode"] == "INS") {
+
+        } else {
+            //aqui obtenemos el registro por id.
+            $heroItem = \Dao\HeroPanel::getHeroeById($viewData["heroItemid"]);
+           /* $viewData["heroItemid"] = $heroItem["heroItemid"];
+            $viewData["heroname"] = $heroItem["heroname"];
+            $viewData["heroimgurl"] = $heroItem["heroimgurl"];
+            $viewData["heroaction"] = $heroItem["heroaction"];
+            $viewData["heroorder"] = $heroItem["heroorder"];
+            $viewData["heroest"] = $heroItem["heroest"];
+            */
+            
+            // Mas rapido lazy developers 
+            \Utilities\ArrUtils::mergeFullArrayTo($heroItem, $viewData);
+
             $viewData["heroest_act"] = $viewData["heroest"] == "ACT";
             $viewData["heroest_ina"] = $viewData["heroest"] == "INA";
+
         }
 
         \Views\Renderer::render("mnt/hero", $viewData);

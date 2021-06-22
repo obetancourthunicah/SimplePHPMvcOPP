@@ -30,6 +30,15 @@ class HeroPanel extends Table{
         );
         return $registros;
     }
+
+    public static function getHeroeById($id)
+    {
+        $sqlstr = "SELECT * from heroitems where heroItemid=:id;";
+        $parameters = array("id" => $id);
+        $registro = self::obtenerUnRegistro($sqlstr, $parameters);
+        return $registro;
+
+    }
 }
 
 
