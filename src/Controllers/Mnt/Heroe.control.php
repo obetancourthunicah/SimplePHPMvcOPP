@@ -24,17 +24,67 @@ class Heroe extends \Controllers\PublicController
         $viewData["heroaction"] = "<h1>Compra Ahora</h1>";
         $viewData["heroorder"] = 1;
         $viewData["heroest"] = 'ACT';
+        $viewData["readonly"] = '';
+        $viewData["showCommitBtn"] = true;
         $viewData["heroest_act"] = true;
         $viewData["heroest_ina"] = false;
 
         //if (isset($_POST["btnConfirmar"]))
         if ($this->isPostBack()) {
+            $viewData["mode"] = $_POST["mode"];
             $viewData["heroItemid"] = $_POST["heroItemid"];
-            $viewData["heroname"] = $_POST["heroname"];
-            $viewData["heroimgurl"] = $_POST["heroimgurl"];
-            $viewData["heroaction"] = $_POST["heroaction"];
-            $viewData["heroorder"] = $_POST["heroorder"];
-            $viewData["heroest"] = $_POST["heroest"];
+            if ($viewData["mode"] != "DEL") {
+                $viewData["heroname"] = $_POST["heroname"];
+                $viewData["heroimgurl"] = $_POST["heroimgurl"];
+                $viewData["heroaction"] = $_POST["heroaction"];
+                $viewData["heroorder"] = $_POST["heroorder"];
+                $viewData["heroest"] = $_POST["heroest"];
+            }
+            switch($viewData["mode"]) {
+            case "INS":
+                $ok = \Dao\HeroPanel::addHero(
+                    $viewData["heroname"],
+                    $viewData["heroimgurl"],
+                    $viewData["heroaction"],
+                    $viewData["heroorder"],
+                    $viewData["heroest"]
+                );
+                if ($ok) {
+                    \Utilities\Site::redirectToWithMsg(
+                        "index.php?page=mnt_heroes",
+                        "Hero Panel agregado Exitosamente"
+                    );
+                }
+                break;
+            case "UPD":
+                $ok = \Dao\HeroPanel::updateHero(
+                    $viewData["heroname"],
+                    $viewData["heroimgurl"],
+                    $viewData["heroaction"],
+                    $viewData["heroorder"],
+                    $viewData["heroest"],
+                    $viewData["heroItemid"]
+                );
+                if ($ok) {
+                    \Utilities\Site::redirectToWithMsg(
+                        "index.php?page=mnt_heroes",
+                        "Hero Panel actualizado Exitosamente"
+                    );
+                }
+                break;
+            case "DEL":
+                $ok = \Dao\HeroPanel::deleteHero(
+                    $viewData["heroItemid"]
+                );
+                if ($ok) {
+                    \Utilities\Site::redirectToWithMsg(
+                        "index.php?page=mnt_heroes",
+                        "Hero Panel eliminado Exitosamente"
+                    );
+                }
+                break;
+            }
+
 
         } else {
             $viewData["mode"] = $_GET["mode"];
@@ -64,6 +114,11 @@ class Heroe extends \Controllers\PublicController
             );
             $viewData["heroest_act"] = $viewData["heroest"] == "ACT";
             $viewData["heroest_ina"] = $viewData["heroest"] == "INA";
+
+            if ($viewData["mode"] == "DEL" || $viewData["mode"] == "DSP") {
+                $viewData["readonly"] = "readonly";
+                $viewData["showCommitBtn"]  = $viewData["mode"] == "DEL";
+            }
 
         }
 

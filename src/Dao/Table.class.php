@@ -90,7 +90,7 @@ abstract class Table
         return $query->fetch();
     }
 
-    protected static function executeNonQuery($sqlstr, $params,  &$conn = null)
+    protected static function executeNonQuery($sqlstr, $params,  &$conn = null):bool
     {
         $pConn = null;
         if ($conn != null) {

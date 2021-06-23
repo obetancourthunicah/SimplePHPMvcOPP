@@ -39,6 +39,46 @@ class HeroPanel extends Table{
         return $registro;
 
     }
+
+    public static function addHero($heroname, $heroimgurl, $heroaction, $heroorder, $heroest)
+    {
+        $insSQL = "INSERT INTO `heroitems` (`heroname`, `heroimgurl`, `heroaction`, `heroorder`, `heroest`) VALUES ( :heroname, :heroimgurl, :heroaction, :heroorder, :heroest);";
+        $parameters = array(
+            "heroname" => $heroname,
+            "heroimgurl" => $heroimgurl,
+            "heroaction" => $heroaction,
+            "heroorder" => $heroorder,
+            "heroest" => $heroest
+        );
+
+        return self::executeNonQuery($insSQL, $parameters);
+    }
+
+    public static function updateHero($heroname, $heroimgurl, $heroaction, $heroorder, $heroest, $heroItemid)
+    {
+        $updSQL = "UPDATE `heroitems` set `heroname`=:heroname, `heroimgurl`=:heroimgurl, `heroaction`=:heroaction, `heroorder`=:heroorder, `heroest`=:heroest where `heroItemid` =:heroItemid;";
+        $parameters = array(
+            "heroname" => $heroname,
+            "heroimgurl" => $heroimgurl,
+            "heroaction" => $heroaction,
+            "heroorder" => $heroorder,
+            "heroest" => $heroest,
+            "heroItemid" => $heroItemid
+        );
+
+        return self::executeNonQuery($updSQL, $parameters);
+    }
+
+    public static function deleteHero($heroItemid)
+    {
+        $delSQL = "DELETE FROM `heroitems`  where `heroItemid` =:heroItemid;";
+        $parameters = array(
+            "heroItemid" => $heroItemid
+        );
+
+        return self::executeNonQuery($delSQL, $parameters);
+    }
+
 }
 
 
