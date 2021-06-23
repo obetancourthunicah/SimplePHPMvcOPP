@@ -12,9 +12,9 @@ class Heroe extends \Controllers\PublicController
         $viewData = array();
         $ModalTitles = array(
             "INS" => "Nuevo Hero Panel",
-            "UPD" => "Actualiza %s %s",
-            "DSP" => "Detalle de %s %s",
-            "DEL" => "Eliminado %s %s"
+            "UPD" => "Actualizando %s - %s",
+            "DSP" => "Detalle de %s - %s",
+            "DEL" => "Eliminado %s - %s"
         );
 
         $viewData["ModalTitle"] = "";
@@ -35,7 +35,7 @@ class Heroe extends \Controllers\PublicController
             $viewData["heroaction"] = $_POST["heroaction"];
             $viewData["heroorder"] = $_POST["heroorder"];
             $viewData["heroest"] = $_POST["heroest"];
-           
+
         } else {
             $viewData["mode"] = $_GET["mode"];
             $viewData["heroItemid"] = isset($_GET["id"])? $_GET["id"] : 0;
@@ -43,7 +43,7 @@ class Heroe extends \Controllers\PublicController
 
         //Visualizar los Datos
         if ($viewData["mode"] == "INS") {
-
+            $viewData["ModalTitle"] = "Agregando nuevo Hero Panel";
         } else {
             //aqui obtenemos el registro por id.
             $heroItem = \Dao\HeroPanel::getHeroeById($viewData["heroItemid"]);
@@ -54,10 +54,14 @@ class Heroe extends \Controllers\PublicController
             $viewData["heroorder"] = $heroItem["heroorder"];
             $viewData["heroest"] = $heroItem["heroest"];
             */
-            
-            // Mas rapido lazy developers 
-            \Utilities\ArrUtils::mergeFullArrayTo($heroItem, $viewData);
 
+            // Mas rapido lazy developers
+            \Utilities\ArrUtils::mergeFullArrayTo($heroItem, $viewData);
+            $viewData["ModalTitle"] = sprintf(
+                $ModalTitles[$viewData["mode"]],
+                $viewData["heroItemid"],
+                $viewData["heroname"]
+            );
             $viewData["heroest_act"] = $viewData["heroest"] == "ACT";
             $viewData["heroest_ina"] = $viewData["heroest"] == "INA";
 
