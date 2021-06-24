@@ -71,7 +71,7 @@ class HeroPanel extends Table{
 
     public static function deleteHero($heroItemid)
     {
-        $delSQL = "DELETE FROM `heroitems`  where `heroItemid` =:heroItemid;";
+        $delSQL = "DELETE FROM `heroitems`  where `heroItemid`=:heroItemid;";
         $parameters = array(
             "heroItemid" => $heroItemid
         );

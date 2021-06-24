@@ -6,7 +6,6 @@ use Utilities\ArrUtils;
 
 class Heroe extends \Controllers\PublicController
 {
-
     public function run():void
     {
         $viewData = array();
@@ -33,6 +32,20 @@ class Heroe extends \Controllers\PublicController
         if ($this->isPostBack()) {
             $viewData["mode"] = $_POST["mode"];
             $viewData["heroItemid"] = $_POST["heroItemid"];
+            $viewData["token"] = $_POST["token"];
+
+            $this->verificarToken();
+            if ($viewData["token"] != $_SESSION["heroes_xss_token"]) {
+                $time = time();
+                $token = md5("heroes" . $time);
+                $_SESSION["heroes_xss_token"] = $token;
+                $_SESSION["heroes_xss_token_tts"] = $time;
+                \Utilities\Site::redirectToWithMsg(
+                    "index.php?page=mnt_heroes",
+                    "Algo sucedio mal intente de nuevo"
+                );
+            }
+
             if ($viewData["mode"] != "DEL") {
                 $viewData["heroname"] = $_POST["heroname"];
                 $viewData["heroimgurl"] = $_POST["heroimgurl"];
@@ -89,6 +102,9 @@ class Heroe extends \Controllers\PublicController
         } else {
             $viewData["mode"] = $_GET["mode"];
             $viewData["heroItemid"] = isset($_GET["id"])? $_GET["id"] : 0;
+            $this->verificarToken();
+            //$token = md5("heroes" . time());
+            //$_SESSION["heroes_xss_token"] = $token;
         }
 
         //Visualizar los Datos
@@ -97,14 +113,20 @@ class Heroe extends \Controllers\PublicController
         } else {
             //aqui obtenemos el registro por id.
             $heroItem = \Dao\HeroPanel::getHeroeById($viewData["heroItemid"]);
-           /* $viewData["heroItemid"] = $heroItem["heroItemid"];
+            /* $viewData["heroItemid"] = $heroItem["heroItemid"];
             $viewData["heroname"] = $heroItem["heroname"];
             $viewData["heroimgurl"] = $heroItem["heroimgurl"];
             $viewData["heroaction"] = $heroItem["heroaction"];
             $viewData["heroorder"] = $heroItem["heroorder"];
             $viewData["heroest"] = $heroItem["heroest"];
             */
-
+            error_log(json_encode($heroItem));
+            if (!$heroItem) {
+                \Utilities\Site::redirectToWithMsg(
+                    "index.php?page=mnt_heroes",
+                    "No existe el registro"
+                );
+            }
             // Mas rapido lazy developers
             \Utilities\ArrUtils::mergeFullArrayTo($heroItem, $viewData);
             $viewData["ModalTitle"] = sprintf(
@@ -123,6 +145,24 @@ class Heroe extends \Controllers\PublicController
         }
 
         \Views\Renderer::render("mnt/hero", $viewData);
+    }
+
+    private function verificarToken(){
+        if (!isset($_SESSION["heroes_xss_token"])) {
+            \Utilities\Site::redirectToWithMsg(
+                "index.php?page=mnt_heroes",
+                "Algo sucedio mal intente de nuevo"
+            );
+        } else {
+            $time = time();
+            if ($time - $_SESSION["heroes_xss_token_tts"] > 86400) {
+                //24 * 60 * 60  horas * minutos * segundo
+                \Utilities\Site::redirectToWithMsg(
+                    "index.php?page=mnt_heroes",
+                    "Algo sucedio mal intente de nuevo"
+                );
+            }
+        }
     }
 
 }

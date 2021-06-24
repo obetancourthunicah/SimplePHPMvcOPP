@@ -3,7 +3,7 @@
 <table>
   <thead>
     <tr>
-          <th>Id</th>
+          <th>#</th>
           <th>Panel</th>
           <th class="hidden-s">Url</th>
           <th class="hidden-s">Html</th>
@@ -15,7 +15,7 @@
   <tbody>
     {{foreach heroes}}
     <tr>
-      <td>{{heroItemid}}</td>
+      <td>{{rownum}}</td>
       <td><a href="index.php?page=mnt_heroe&mode=DSP&id={{heroItemid}}">{{heroname}}</a></td>
       <td class="hidden-s">{{heroimgurl}}</td>
       <td class="hidden-s">{{heroaction}}</td>

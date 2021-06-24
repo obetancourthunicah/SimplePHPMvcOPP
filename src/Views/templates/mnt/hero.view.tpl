@@ -8,6 +8,7 @@
       <input class="col-12 col-m-9" readonly disabled type="text" name="heroItemidd" id="heroItemidd" placehoder="Código" value="{{heroItemid}}" />
       <input type="hidden" name="mode" value="{{mode}}" />
       <input type="hidden" name="heroItemid" value="{{heroItemid}}" />
+      <input type="hidden" name="token" value="{{heroes_xss_token}}" />
     </div>
     <div class="row my-2 align-center">
       <label class="col-12 col-m-3" for="heroname">Panel</label>
