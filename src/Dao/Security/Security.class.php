@@ -25,6 +25,28 @@ use Exception;
 
 class Security extends \Dao\Table
 {
+    static public function getUsuarios($filter = "", $page = -1, $items = 0)
+    {
+        $sqlstr = "";
+        if ($filter == "" && $page == -1 && $items == 0) {
+            $sqlstr = "SELECT * FROM usuario;";
+        } else {
+            //TODO: Terminar consultas FACET
+            if ($page = -1 and $items = 0) {
+                $sqlstr = sprintf("SELECT * FROM usuarios %s;", $filter);
+            } else {
+                $offset = ($page -1 * $items);
+                $sqlstr = sprintf(
+                    "SELECT * FROM usuarios %s limit %d, %d;",
+                    $filter,
+                    $offset,
+                    $items
+                );
+            }
+        }
+        return self::obtenerRegistros($sqlstr, array());
+    }
+
     static public function newUsuario($email, $password)
     {
         if (!\Utilities\Validators::IsValidEmail($email)) {
@@ -70,14 +92,9 @@ class Security extends \Dao\Table
 
         return self::obtenerUnRegistro($sqlstr, $params);
     }
-    
+
     static private function _saltPassword($password)
     {
-        /*if ($salt % 2 == 0) {
-            return $password . $salt;
-        }
-        return $salt . $password
-        */
         return hash_hmac(
             "sha256",
             $password,

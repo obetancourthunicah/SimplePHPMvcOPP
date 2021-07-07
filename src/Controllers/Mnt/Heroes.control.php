@@ -2,7 +2,7 @@
 
 namespace Controllers\Mnt;
 
-class Heroes extends \Controllers\PublicController {
+class Heroes extends \Controllers\PrivateController {
 
     public function run():void
     {

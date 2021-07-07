@@ -1,0 +1,11 @@
+Requerimiento:
+Como usuario no registrado deseo poder registrarme en el sistema
+para poder comprar las partituras o pianos.
+
+Como <<usuario>> deseo <<que hacer>> para <<objetivo>>
+
+Criterios de Aceptación:
+1) Debe ingresar un correo único
+2) Si ya existe el correo opción a recuperar la contraseña
+3) Contraseña debe tener 8 characteres mínimo, un simbolo, un numero
+  un mayuscula.
