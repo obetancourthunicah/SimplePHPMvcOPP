@@ -11,9 +11,9 @@
 * Para generar 
 ## Pasos
 
-1. Crear en ```src>Controllers``` dos archivos de ```Entidad.control.php``` extendiento la clase de ```PublicController```
+1. Crear en ```src>Controllers``` dos archivos de ```Entidad.php``` extendiento la clase de ```PublicController```
 
 2. Crear en la carpeta ```src>Views``` dos archivos de
 ```Entidad.view.tpl```
 
-3. Crear en la carpeta ```src>Dao``` un archivo ```Entidad.class.php``` que extienda la clase ```Table.class.php``` donde elaborará la manipulación de la tabla.
+3. Crear en la carpeta ```src>Dao``` un archivo ```Entidad.php``` que extienda la clase ```Table.php``` donde elaborará la manipulación de la tabla.
