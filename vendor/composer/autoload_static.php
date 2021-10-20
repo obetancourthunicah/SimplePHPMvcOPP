@@ -424,6 +424,10 @@ class ComposerStaticInitac2d9af57f58614faa56a4064e8533c4
         ),
     );
 
+    public static $fallbackDirsPsr0 = array (
+        0 => __DIR__ . '/../..' . '/src',
+    );
+
     public static $classMap = array (
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
@@ -442,6 +446,7 @@ class ComposerStaticInitac2d9af57f58614faa56a4064e8533c4
             $loader->prefixLengthsPsr4 = ComposerStaticInitac2d9af57f58614faa56a4064e8533c4::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitac2d9af57f58614faa56a4064e8533c4::$prefixDirsPsr4;
             $loader->prefixesPsr0 = ComposerStaticInitac2d9af57f58614faa56a4064e8533c4::$prefixesPsr0;
+            $loader->fallbackDirsPsr0 = ComposerStaticInitac2d9af57f58614faa56a4064e8533c4::$fallbackDirsPsr0;
             $loader->classMap = ComposerStaticInitac2d9af57f58614faa56a4064e8533c4::$classMap;
 
         }, null, ClassLoader::class);
