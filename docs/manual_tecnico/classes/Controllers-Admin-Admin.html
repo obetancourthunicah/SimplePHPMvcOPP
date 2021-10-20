@@ -54,7 +54,10 @@
                                                 <h4 class="phpdocumentor-sidebar__root-namespace"><a href="namespaces/controllers.html"><abbr title="\Controllers">Controllers</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="namespaces/controllers-admin.html"><abbr title="\Controllers\Admin">Admin</abbr></a></li>
+                                            <li><a href="namespaces/controllers-api.html"><abbr title="\Controllers\Api">Api</abbr></a></li>
+                                            <li><a href="namespaces/controllers-checkout.html"><abbr title="\Controllers\Checkout">Checkout</abbr></a></li>
                                             <li><a href="namespaces/controllers-mnt.html"><abbr title="\Controllers\Mnt">Mnt</abbr></a></li>
+                                            <li><a href="namespaces/controllers-rpts.html"><abbr title="\Controllers\Rpts">Rpts</abbr></a></li>
                                             <li><a href="namespaces/controllers-sec.html"><abbr title="\Controllers\Sec">Sec</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="namespaces/dao.html"><abbr title="\Dao">Dao</abbr></a></h4>
@@ -64,6 +67,8 @@
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="namespaces/utilities.html"><abbr title="\Utilities">Utilities</abbr></a></h4>
                 <ul class="phpdocumentor-list">
+                                            <li><a href="namespaces/utilities-paypal.html"><abbr title="\Utilities\Paypal">Paypal</abbr></a></li>
+                                            <li><a href="namespaces/utilities-pixelpay.html"><abbr title="\Utilities\PixelPay">PixelPay</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="namespaces/views.html"><abbr title="\Views">Views</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -73,8 +78,9 @@
         <section class="phpdocumentor-sidebar__category">
         <h2 class="phpdocumentor-sidebar__category-header">Packages</h2>
                     <h3 class="phpdocumentor-sidebar__root-package"><a href="packages/SimplePHPOOPMvc.html"><abbr title="\SimplePHPOOPMvc">SimplePHPOOPMvc</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="packages/Default.html"><abbr title="\Default">Default</abbr></a></h3>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="packages/Controllers.html"><abbr title="\Controllers">Controllers</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="packages/ControllersAdmin.html"><abbr title="\ControllersAdmin">ControllersAdmin</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="packages/Default.html"><abbr title="\Default">Default</abbr></a></h3>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="packages/Views.html"><abbr title="\Views">Views</abbr></a></h3>
                         </section>
     
@@ -108,7 +114,7 @@
             <div class="phpdocumentor-element__package">
             in package
             <ul class="phpdocumentor-breadcrumbs">
-                                    <li class="phpdocumentor-breadcrumb"><a href="packages/Default.html">Default</a></li>
+                                    <li class="phpdocumentor-breadcrumb"><a href="packages/ControllersAdmin.html">ControllersAdmin</a></li>
                             </ul>
         </div>
     
@@ -118,14 +124,54 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Controllers/Admin/Admin.control.php"><a href="files/src-controllers-admin-admin-control.html"><abbr title="src/Controllers/Admin/Admin.control.php">Admin.control.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">4</span>
+    <span class="phpdocumentor-element-found-in__line">24</span>
 </aside>
 
-            <p class="phpdocumentor-summary">Private Access Controller Base Class</p>
+            <p class="phpdocumentor-summary">Página Principal de Administradores</p>
 
     <section class="phpdocumentor-description"></section>
 
 
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">category</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>Public</p>
+</section>
+
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">author</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>Orlando J Betancourth <a href="mailto:orlando.betancourth@gmail.com">orlando.betancourth@gmail.com</a></p>
+</section>
+
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">license</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>MIT http://</p>
+</section>
+
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="http://"> http:// </a>
+                    
+                                    </dd>
+                        </dl>
 
 
 
@@ -150,14 +196,14 @@
     <span>
                         &nbsp;: mixed    </span>
 </dt>
-<dd>Public Controller Base Constructor</dd>
+<dd>Constructor</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Controllers-Admin-Admin.html#method_run">run()</a>
     <span>
                         &nbsp;: void    </span>
 </dt>
-<dd></dd>
+<dd>Ejecuta el controlador</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Controllers-PublicController.html#method_toString">toString()</a>
@@ -169,7 +215,7 @@
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/Controllers-PrivateController.html#method_isFeatureAutorized">isFeatureAutorized()</a>
     <span>
-                        &nbsp;: <abbr title="\Controllers\boolean">boolean</abbr>    </span>
+                        &nbsp;: bool    </span>
 </dt>
 <dd></dd>
 
@@ -256,10 +302,10 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Controllers/Admin/Admin.control.php"><a href="files/src-controllers-admin-admin-control.html"><abbr title="src/Controllers/Admin/Admin.control.php">Admin.control.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">6</span>
+    <span class="phpdocumentor-element-found-in__line">29</span>
 </aside>
 
-        <p class="phpdocumentor-summary">Public Controller Base Constructor</p>
+        <p class="phpdocumentor-summary">Constructor</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -290,15 +336,17 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Controllers/Admin/Admin.control.php"><a href="files/src-controllers-admin-admin-control.html"><abbr title="src/Controllers/Admin/Admin.control.php">Admin.control.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">14</span>
+    <span class="phpdocumentor-element-found-in__line">40</span>
 </aside>
 
-    
+        <p class="phpdocumentor-summary">Ejecuta el controlador</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">run</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
     
     
 
@@ -322,7 +370,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Controllers/PublicController.control.php"><a href="files/src-controllers-publiccontroller-control.html"><abbr title="src/Controllers/PublicController.control.php">PublicController.control.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">38</span>
+    <span class="phpdocumentor-element-found-in__line">48</span>
 </aside>
 
         <p class="phpdocumentor-summary">Return name of instantiated class</p>
@@ -362,7 +410,7 @@
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                <span class="phpdocumentor-signature__name">isFeatureAutorized</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$feature</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Controllers\boolean">boolean</abbr></span></code>
+                <span class="phpdocumentor-signature__name">isFeatureAutorized</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$feature</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -379,7 +427,7 @@
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><abbr title="\Controllers\boolean">boolean</abbr></span>
+    <span class="phpdocumentor-signature__response_type">bool</span>
             &mdash;
             <section class="phpdocumentor-description"></section>
 
@@ -398,7 +446,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Controllers/PublicController.control.php"><a href="files/src-controllers-publiccontroller-control.html"><abbr title="src/Controllers/PublicController.control.php">PublicController.control.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">47</span>
+    <span class="phpdocumentor-element-found-in__line">57</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns if http method is a post or not</p>

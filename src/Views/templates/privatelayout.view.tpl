@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/{{BASE_DIR}}/public/css/appstyle.css" />
-  <script src="https://kit.fontawesome.com/bd626a0718.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/{{FONT_AWESOME_KIT}}.js" crossorigin="anonymous"></script>
   {{foreach SiteLinks}}
   <link rel="stylesheet" href="/{{~BASE_DIR}}/{{this}}" />
   {{endfor SiteLinks}}
@@ -19,19 +19,25 @@
 
 <body>
   <header>
+    <input type="checkbox" class="menu_toggle" id="menu_toggle" />
+    <label for="menu_toggle" class="menu_toggle_icon">
+      <div class="hmb dgn pt-1"></div>
+      <div class="hmb hrz"></div>
+      <div class="hmb dgn pt-2"></div>
+    </label>
     <h1>{{SITE_TITLE}}</h1>
-    <nav>
+    <nav id="menu">
       <ul>
-        {{with login}}
-          <li><span>{{userName}}</span></li>
-        {{endwith login}}
-        <li><a href="index.php?page=admin_admin">Inicio</a></li>
+        <li><a href="index.php?page=admin_admin"><i class="fas fa-home"></i>&nbsp;Inicio</a></li>
         {{foreach NAVIGATION}}
             <li><a href="{{nav_url}}">{{nav_label}}</a></li>
         {{endfor NAVIGATION}}
-        <li><a href="index.php?page=sec_logout">Salir</a></li>
+        <li><a href="index.php?page=sec_logout"><i class="fas fa-sign-out-alt"></i>&nbsp;Salir</a></li>
       </ul>
     </nav>
+    {{with login}}
+    <span class="username">{{userName}} <a href="index.php?page=sec_logout"><i class="fas fa-sign-out-alt"></i></a></span>
+    {{endwith login}}
   </header>
   <main>
     {{{page_content}}}

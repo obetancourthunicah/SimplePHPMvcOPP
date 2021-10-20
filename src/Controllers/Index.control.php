@@ -29,16 +29,14 @@ class Index extends PublicController
      */
     public function run() :void
     {
-        \Utilities\Site::addLink("public/css/heropanel.css");
+        //\Utilities\Site::addLink("public/css/heropanel.css");
         /*
         1 Conseguir de la DB los registro de Heroes activos
         2 Injectarlo en un arreglo de vista
         3 Mostrar los heros panels en la vista
         */
         $viewData = array();
-        $viewData["page"] = $this->toString();
         $viewData["heroes"] = \Dao\HeroPanel::getActiveHeroeos();
-        $viewData["algoMas"] = "Esto es algo mas que se envia a la vista";
         \Views\Renderer::render("index", $viewData);
     }
 }

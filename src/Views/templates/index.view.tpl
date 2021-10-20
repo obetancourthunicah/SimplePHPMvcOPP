@@ -1,11 +1,8 @@
-<h1>{{page}}</h1>
-<h2>{{algoMas}}</h2>
-
-<section>
+<section class="herocontainer">
   {{foreach heroes}}
     <section class="hero">
       <img src="/{{~BASE_DIR}}/{{heroimgurl}}">
-      <section class="action">
+      <section class="action depth-1">
           {{heroname}}
           <br/>
           {{heroaction}}
@@ -13,11 +10,4 @@
       <hr/>
     </section>
   {{endfor heroes}}
-</section>
-<section>
-  Top 5 Pianos a la venta
-</section>
-
-<section>
-  Top 5 Partituras
 </section>

@@ -194,7 +194,7 @@ class Security extends \Dao\Table
         );
     }
 
-    static public function getRolesByUsuario($userCod, $rolescod)
+    static public function isUsuarioInRol($userCod, $rolescod)
     {
         $sqlstr = "select * from roles a inner join
         roles_usuarios b on a.rolescod = b.rolescod where a.rolesest = 'ACT'
@@ -207,6 +207,20 @@ class Security extends \Dao\Table
             )
         );
         return count($resultados) > 0;
+    }
+
+    static public function getRolesByUsuario($userCod)
+    {
+        $sqlstr = "select * from roles a inner join
+        roles_usuarios b on a.rolescod = b.rolescod where a.rolesest = 'ACT'
+        and b.usercod=:usercod;";
+        $resultados = self::obtenerRegistros(
+            $sqlstr,
+            array(
+                "usercod" => $userCod
+            )
+        );
+        return $resultados;
     }
 
     static public function removeRolFromUser($userCod, $rolescod)

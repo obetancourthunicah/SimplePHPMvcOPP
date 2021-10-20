@@ -60,7 +60,7 @@ class Security {
                 \Dao\Security\Security::addNewRol($rol, $rol, "ACT");
             }
         }
-        return \Dao\Security\Security::getRolesByUsuario($userId, $rol);
+        return \Dao\Security\Security::isUsuarioInRol($userId, $rol);
     }
 }
 
