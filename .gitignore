@@ -4,3 +4,6 @@ vendor
 .phpdoc
 data
 .vscode
+.htaccess
+docs/manual_tecnico
+composer.lock
