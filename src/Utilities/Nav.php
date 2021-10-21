@@ -7,12 +7,6 @@ class Nav {
     public static function setNavContext(){
         $tmpNAVIGATION = array();
         $userID = \Utilities\Security::getUserId();
-        if (\Utilities\Security::isAuthorized($userID, "MntCategorias")) {
-            $tmpNAVIGATION[] = array(
-                "nav_url"=>"index.php?page=mnt_categorias",
-                "nav_label"=>"Categorías"
-            );
-        }
         if (\Utilities\Security::isAuthorized($userID, "MntUsuarios")) {
             $tmpNAVIGATION[] = array(
                 "nav_url" => "index.php?page=mnt_usuarios",
