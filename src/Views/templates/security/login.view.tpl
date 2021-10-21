@@ -27,7 +27,7 @@
         {{generalError}}
       </div>
     {{endif generalError}}
-    <div class="row right flex-center flex-end px-4">
+    <div class="row right flex-end px-4">
       <button class="primary" id="btnLogin" type="submit">Iniciar Sesión</button>
     </div>
     </section>

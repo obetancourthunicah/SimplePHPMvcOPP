@@ -54,7 +54,10 @@
                                                 <h4 class="phpdocumentor-sidebar__root-namespace"><a href="namespaces/controllers.html"><abbr title="\Controllers">Controllers</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="namespaces/controllers-admin.html"><abbr title="\Controllers\Admin">Admin</abbr></a></li>
+                                            <li><a href="namespaces/controllers-api.html"><abbr title="\Controllers\Api">Api</abbr></a></li>
+                                            <li><a href="namespaces/controllers-checkout.html"><abbr title="\Controllers\Checkout">Checkout</abbr></a></li>
                                             <li><a href="namespaces/controllers-mnt.html"><abbr title="\Controllers\Mnt">Mnt</abbr></a></li>
+                                            <li><a href="namespaces/controllers-rpts.html"><abbr title="\Controllers\Rpts">Rpts</abbr></a></li>
                                             <li><a href="namespaces/controllers-sec.html"><abbr title="\Controllers\Sec">Sec</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="namespaces/dao.html"><abbr title="\Dao">Dao</abbr></a></h4>
@@ -64,6 +67,8 @@
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="namespaces/utilities.html"><abbr title="\Utilities">Utilities</abbr></a></h4>
                 <ul class="phpdocumentor-list">
+                                            <li><a href="namespaces/utilities-paypal.html"><abbr title="\Utilities\Paypal">Paypal</abbr></a></li>
+                                            <li><a href="namespaces/utilities-pixelpay.html"><abbr title="\Utilities\PixelPay">PixelPay</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="namespaces/views.html"><abbr title="\Views">Views</abbr></a></h4>
                 <ul class="phpdocumentor-list">
@@ -73,8 +78,9 @@
         <section class="phpdocumentor-sidebar__category">
         <h2 class="phpdocumentor-sidebar__category-header">Packages</h2>
                     <h3 class="phpdocumentor-sidebar__root-package"><a href="packages/SimplePHPOOPMvc.html"><abbr title="\SimplePHPOOPMvc">SimplePHPOOPMvc</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="packages/Default.html"><abbr title="\Default">Default</abbr></a></h3>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="packages/Controllers.html"><abbr title="\Controllers">Controllers</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="packages/ControllersAdmin.html"><abbr title="\ControllersAdmin">ControllersAdmin</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="packages/Default.html"><abbr title="\Default">Default</abbr></a></h3>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="packages/Views.html"><abbr title="\Views">Views</abbr></a></h3>
                         </section>
     
@@ -135,6 +141,13 @@
 
 <dl class="phpdocumentor-table-of-contents">
                 <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/Dao-Table.html#property__bindMapping">$_bindMapping</a>
+    <span>
+                &nbsp;: mixed            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/Dao-Table.html#property__conn">$_conn</a>
     <span>
                 &nbsp;: mixed            </span>
@@ -150,6 +163,13 @@
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/Dao-Table.html#method_executeNonQuery">executeNonQuery()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="classes/Dao-Table.html#method_getBindType">getBindType()</a>
     <span>
                         &nbsp;: mixed    </span>
 </dt>
@@ -188,6 +208,36 @@
             Properties
             <a href="classes/Dao-Table.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+            -static                                            "
+>
+    <h4 class="phpdocumentor-element__name" id="property__bindMapping">
+        $_bindMapping
+        <a href="classes/Dao-Table.html#property__bindMapping" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Dao/Table.class.php"><a href="files/src-dao-table-class.html"><abbr title="src/Dao/Table.class.php">Table.class.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">18</span>
+</aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+    <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">$_bindMapping</span>
+     = <span class="phpdocumentor-signature__default-value">array(&quot;boolean&quot; =&gt; PDO::PARAM_BOOL, &quot;integer&quot; =&gt; PDO::PARAM_INT, &quot;double&quot; =&gt; PDO::PARAM_STR, &quot;string&quot; =&gt; PDO::PARAM_STR, &quot;array&quot; =&gt; PDO::PARAM_STR, &quot;object&quot; =&gt; PDO::PARAM_STR, &quot;resource&quot; =&gt; PDO::PARAM_STR, &quot;NULL&quot; =&gt; PDO::PARAM_NULL, &quot;unknown type&quot; =&gt; PDO::PARAM_STR)</span></code>
+
+    
+    
+
+</article>
                     <article
         class="
             phpdocumentor-element
@@ -238,7 +288,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Dao/Table.class.php"><a href="files/src-dao-table-class.html"><abbr title="src/Dao/Table.class.php">Table.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">69</span>
+    <span class="phpdocumentor-element-found-in__line">108</span>
 </aside>
 
     
@@ -287,7 +337,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Dao/Table.class.php"><a href="files/src-dao-table-class.html"><abbr title="src/Dao/Table.class.php">Table.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">54</span>
+    <span class="phpdocumentor-element-found-in__line">93</span>
 </aside>
 
     
@@ -316,6 +366,48 @@
                 <span class="phpdocumentor-signature__argument__name">$conn</span>
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getBindType">
+        getBindType()
+        <a href="classes/Dao-Table.html#method_getBindType" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Dao/Table.class.php"><a href="files/src-dao-table-class.html"><abbr title="src/Dao/Table.class.php">Table.class.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">29</span>
+</aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">getBindType</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$value</span>
+                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
             </dd>
@@ -375,7 +467,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Dao/Table.class.php"><a href="files/src-dao-table-class.html"><abbr title="src/Dao/Table.class.php">Table.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">19</span>
+    <span class="phpdocumentor-element-found-in__line">58</span>
 </aside>
 
     
@@ -431,7 +523,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Dao/Table.class.php"><a href="files/src-dao-table-class.html"><abbr title="src/Dao/Table.class.php">Table.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">36</span>
+    <span class="phpdocumentor-element-found-in__line">75</span>
 </aside>
 
     

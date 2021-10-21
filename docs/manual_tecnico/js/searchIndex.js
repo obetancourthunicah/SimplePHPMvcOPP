@@ -3,17 +3,17 @@ Search.appendIndex(
                 {
             "fqsen": "\\Controllers\\Admin\\Admin",
             "name": "Admin",
-            "summary": "Private\u0020Access\u0020Controller\u0020Base\u0020Class",
+            "summary": "P\u00E1gina\u0020Principal\u0020de\u0020Administradores",
             "url": "classes/Controllers-Admin-Admin.html"
         },                {
             "fqsen": "\\Controllers\\Admin\\Admin\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "Public\u0020Controller\u0020Base\u0020Constructor",
+            "summary": "Constructor",
             "url": "classes/Controllers-Admin-Admin.html#method___construct"
         },                {
             "fqsen": "\\Controllers\\Admin\\Admin\u003A\u003Arun\u0028\u0029",
             "name": "run",
-            "summary": "",
+            "summary": "Ejecuta\u0020el\u0020controlador",
             "url": "classes/Controllers-Admin-Admin.html#method_run"
         },                {
             "fqsen": "\\Controllers\\Error",
@@ -48,7 +48,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Controllers\\Mnt\\Categoria",
             "name": "Categoria",
-            "summary": "Public\u0020Access\u0020Controller\u0020Base\u0020Class",
+            "summary": "Private\u0020Access\u0020Controller\u0020Base\u0020Class",
             "url": "classes/Controllers-Mnt-Categoria.html"
         },                {
             "fqsen": "\\Controllers\\Mnt\\Categoria\u003A\u003Arun\u0028\u0029",
@@ -133,7 +133,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Controllers\\Mnt\\Categorias",
             "name": "Categorias",
-            "summary": "Public\u0020Access\u0020Controller\u0020Base\u0020Class",
+            "summary": "Private\u0020Access\u0020Controller\u0020Base\u0020Class",
             "url": "classes/Controllers-Mnt-Categorias.html"
         },                {
             "fqsen": "\\Controllers\\Mnt\\Categorias\u003A\u003Arun\u0028\u0029",
@@ -381,6 +381,11 @@ Search.appendIndex(
             "summary": "Clase\u0020base\u0020para\u0020todos\u0020los\u0020modelos\u0020de\u0020datos",
             "url": "classes/Dao-Security-Security.html"
         },                {
+            "fqsen": "\\Dao\\Security\\Security\u003A\u003AgetUsuarios\u0028\u0029",
+            "name": "getUsuarios",
+            "summary": "",
+            "url": "classes/Dao-Security-Security.html#method_getUsuarios"
+        },                {
             "fqsen": "\\Dao\\Security\\Security\u003A\u003AnewUsuario\u0028\u0029",
             "name": "newUsuario",
             "summary": "",
@@ -501,6 +506,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Dao-Table.html#method_getConn"
         },                {
+            "fqsen": "\\Dao\\Table\u003A\u003AgetBindType\u0028\u0029",
+            "name": "getBindType",
+            "summary": "",
+            "url": "classes/Dao-Table.html#method_getBindType"
+        },                {
             "fqsen": "\\Dao\\Table\u003A\u003AobtenerRegistros\u0028\u0029",
             "name": "obtenerRegistros",
             "summary": "",
@@ -525,6 +535,11 @@ Search.appendIndex(
             "name": "_conn",
             "summary": "",
             "url": "classes/Dao-Table.html#property__conn"
+        },                {
+            "fqsen": "\\Dao\\Table\u003A\u003A\u0024_bindMapping",
+            "name": "_bindMapping",
+            "summary": "",
+            "url": "classes/Dao-Table.html#property__bindMapping"
         },                {
             "fqsen": "\\Utilities\\ArrUtils",
             "name": "ArrUtils",
@@ -776,10 +791,250 @@ Search.appendIndex(
             "summary": "Obtiene\u0020los\u0020Macro\u0020Bloques\u0020de\u0020Plantillas",
             "url": "classes/Views-Renderer.html#method__parseTemplate"
         },                {
+            "fqsen": "\\Views\\Renderer\u003A\u003ArewriteUrl\u0028\u0029",
+            "name": "rewriteUrl",
+            "summary": "",
+            "url": "classes/Views-Renderer.html#method_rewriteUrl"
+        },                {
             "fqsen": "\\Views\\Renderer\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
             "summary": "Constructor\u0020privado\u0020evita\u0020instancia\u0020de\u0020esta\u0020clase",
             "url": "classes/Views-Renderer.html#method___construct"
+        },                {
+            "fqsen": "\\Controllers\\Api\\GetHeroes",
+            "name": "GetHeroes",
+            "summary": "Public\u0020Access\u0020Controller\u0020Base\u0020Class",
+            "url": "classes/Controllers-Api-GetHeroes.html"
+        },                {
+            "fqsen": "\\Controllers\\Api\\GetHeroes\u003A\u003Arun\u0028\u0029",
+            "name": "run",
+            "summary": "",
+            "url": "classes/Controllers-Api-GetHeroes.html#method_run"
+        },                {
+            "fqsen": "\\Controllers\\Checkout\\Accept",
+            "name": "Accept",
+            "summary": "Public\u0020Access\u0020Controller\u0020Base\u0020Class",
+            "url": "classes/Controllers-Checkout-Accept.html"
+        },                {
+            "fqsen": "\\Controllers\\Checkout\\Accept\u003A\u003Arun\u0028\u0029",
+            "name": "run",
+            "summary": "",
+            "url": "classes/Controllers-Checkout-Accept.html#method_run"
+        },                {
+            "fqsen": "\\Controllers\\Checkout\\Checkout",
+            "name": "Checkout",
+            "summary": "Public\u0020Access\u0020Controller\u0020Base\u0020Class",
+            "url": "classes/Controllers-Checkout-Checkout.html"
+        },                {
+            "fqsen": "\\Controllers\\Checkout\\Checkout\u003A\u003Arun\u0028\u0029",
+            "name": "run",
+            "summary": "",
+            "url": "classes/Controllers-Checkout-Checkout.html#method_run"
+        },                {
+            "fqsen": "\\Controllers\\Checkout\\Error",
+            "name": "Error",
+            "summary": "Public\u0020Access\u0020Controller\u0020Base\u0020Class",
+            "url": "classes/Controllers-Checkout-Error.html"
+        },                {
+            "fqsen": "\\Controllers\\Checkout\\Error\u003A\u003Arun\u0028\u0029",
+            "name": "run",
+            "summary": "",
+            "url": "classes/Controllers-Checkout-Error.html#method_run"
+        },                {
+            "fqsen": "\\Controllers\\Mnt\\Heroe",
+            "name": "Heroe",
+            "summary": "Private\u0020Access\u0020Controller\u0020Base\u0020Class",
+            "url": "classes/Controllers-Mnt-Heroe.html"
+        },                {
+            "fqsen": "\\Controllers\\Mnt\\Heroe\u003A\u003Arun\u0028\u0029",
+            "name": "run",
+            "summary": "",
+            "url": "classes/Controllers-Mnt-Heroe.html#method_run"
+        },                {
+            "fqsen": "\\Controllers\\Mnt\\Heroe\u003A\u003AverificarToken\u0028\u0029",
+            "name": "verificarToken",
+            "summary": "",
+            "url": "classes/Controllers-Mnt-Heroe.html#method_verificarToken"
+        },                {
+            "fqsen": "\\Controllers\\Mnt\\Heroes",
+            "name": "Heroes",
+            "summary": "Private\u0020Access\u0020Controller\u0020Base\u0020Class",
+            "url": "classes/Controllers-Mnt-Heroes.html"
+        },                {
+            "fqsen": "\\Controllers\\Mnt\\Heroes\u003A\u003Arun\u0028\u0029",
+            "name": "run",
+            "summary": "",
+            "url": "classes/Controllers-Mnt-Heroes.html#method_run"
+        },                {
+            "fqsen": "\\Controllers\\Mnt\\Usuarios",
+            "name": "Usuarios",
+            "summary": "Private\u0020Access\u0020Controller\u0020Base\u0020Class",
+            "url": "classes/Controllers-Mnt-Usuarios.html"
+        },                {
+            "fqsen": "\\Controllers\\Mnt\\Usuarios\u003A\u003Arun\u0028\u0029",
+            "name": "run",
+            "summary": "",
+            "url": "classes/Controllers-Mnt-Usuarios.html#method_run"
+        },                {
+            "fqsen": "\\Controllers\\Rpts\\ReportUsers",
+            "name": "ReportUsers",
+            "summary": "Public\u0020Access\u0020Controller\u0020Base\u0020Class",
+            "url": "classes/Controllers-Rpts-ReportUsers.html"
+        },                {
+            "fqsen": "\\Controllers\\Rpts\\ReportUsers\u003A\u003Arun\u0028\u0029",
+            "name": "run",
+            "summary": "",
+            "url": "classes/Controllers-Rpts-ReportUsers.html#method_run"
+        },                {
+            "fqsen": "\\Dao\\HeroPanel",
+            "name": "HeroPanel",
+            "summary": "Clase\u0020base\u0020para\u0020todos\u0020los\u0020modelos\u0020de\u0020datos",
+            "url": "classes/Dao-HeroPanel.html"
+        },                {
+            "fqsen": "\\Dao\\HeroPanel\u003A\u003AgetActiveHeroeos\u0028\u0029",
+            "name": "getActiveHeroeos",
+            "summary": "",
+            "url": "classes/Dao-HeroPanel.html#method_getActiveHeroeos"
+        },                {
+            "fqsen": "\\Dao\\HeroPanel\u003A\u003AgetAllHeroes\u0028\u0029",
+            "name": "getAllHeroes",
+            "summary": "",
+            "url": "classes/Dao-HeroPanel.html#method_getAllHeroes"
+        },                {
+            "fqsen": "\\Dao\\HeroPanel\u003A\u003AgetHeroeById\u0028\u0029",
+            "name": "getHeroeById",
+            "summary": "",
+            "url": "classes/Dao-HeroPanel.html#method_getHeroeById"
+        },                {
+            "fqsen": "\\Dao\\HeroPanel\u003A\u003AaddHero\u0028\u0029",
+            "name": "addHero",
+            "summary": "",
+            "url": "classes/Dao-HeroPanel.html#method_addHero"
+        },                {
+            "fqsen": "\\Dao\\HeroPanel\u003A\u003AupdateHero\u0028\u0029",
+            "name": "updateHero",
+            "summary": "",
+            "url": "classes/Dao-HeroPanel.html#method_updateHero"
+        },                {
+            "fqsen": "\\Dao\\HeroPanel\u003A\u003AdeleteHero\u0028\u0029",
+            "name": "deleteHero",
+            "summary": "",
+            "url": "classes/Dao-HeroPanel.html#method_deleteHero"
+        },                {
+            "fqsen": "\\Utilities\\Nav",
+            "name": "Nav",
+            "summary": "",
+            "url": "classes/Utilities-Nav.html"
+        },                {
+            "fqsen": "\\Utilities\\Nav\u003A\u003AsetNavContext\u0028\u0029",
+            "name": "setNavContext",
+            "summary": "",
+            "url": "classes/Utilities-Nav.html#method_setNavContext"
+        },                {
+            "fqsen": "\\Utilities\\Nav\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/Utilities-Nav.html#method___construct"
+        },                {
+            "fqsen": "\\Utilities\\Nav\u003A\u003A__clone\u0028\u0029",
+            "name": "__clone",
+            "summary": "",
+            "url": "classes/Utilities-Nav.html#method___clone"
+        },                {
+            "fqsen": "\\Utilities\\Paypal\\PayPalCapture",
+            "name": "PayPalCapture",
+            "summary": "",
+            "url": "classes/Utilities-Paypal-PayPalCapture.html"
+        },                {
+            "fqsen": "\\Utilities\\Paypal\\PayPalCapture\u003A\u003AcaptureOrder\u0028\u0029",
+            "name": "captureOrder",
+            "summary": "",
+            "url": "classes/Utilities-Paypal-PayPalCapture.html#method_captureOrder"
+        },                {
+            "fqsen": "\\Utilities\\Paypal\\PayPalClient",
+            "name": "PayPalClient",
+            "summary": "",
+            "url": "classes/Utilities-Paypal-PayPalClient.html"
+        },                {
+            "fqsen": "\\Utilities\\Paypal\\PayPalClient\u003A\u003Aclient\u0028\u0029",
+            "name": "client",
+            "summary": "Returns\u0020PayPal\u0020HTTP\u0020client\u0020instance\u0020with\u0020environment\u0020that\u0020has\u0020access\ncredentials\u0020context.\u0020Use\u0020this\u0020instance\u0020to\u0020invoke\u0020PayPal\u0020APIs,\u0020provided\u0020the\ncredentials\u0020have\u0020access.",
+            "url": "classes/Utilities-Paypal-PayPalClient.html#method_client"
+        },                {
+            "fqsen": "\\Utilities\\Paypal\\PayPalClient\u003A\u003Aenvironment\u0028\u0029",
+            "name": "environment",
+            "summary": "Set\u0020up\u0020and\u0020return\u0020PayPal\u0020PHP\u0020SDK\u0020environment\u0020with\u0020PayPal\u0020access\u0020credentials.",
+            "url": "classes/Utilities-Paypal-PayPalClient.html#method_environment"
+        },                {
+            "fqsen": "\\Utilities\\Paypal\\PayPalOrder",
+            "name": "PayPalOrder",
+            "summary": "",
+            "url": "classes/Utilities-Paypal-PayPalOrder.html"
+        },                {
+            "fqsen": "\\Utilities\\Paypal\\PayPalOrder\u003A\u003AcreateOrder\u0028\u0029",
+            "name": "createOrder",
+            "summary": "",
+            "url": "classes/Utilities-Paypal-PayPalOrder.html#method_createOrder"
+        },                {
+            "fqsen": "\\Utilities\\Paypal\\PayPalOrder\u003A\u003AaddItem\u0028\u0029",
+            "name": "addItem",
+            "summary": "",
+            "url": "classes/Utilities-Paypal-PayPalOrder.html#method_addItem"
+        },                {
+            "fqsen": "\\Utilities\\Paypal\\PayPalOrder\u003A\u003AaddToBody\u0028\u0029",
+            "name": "addToBody",
+            "summary": "",
+            "url": "classes/Utilities-Paypal-PayPalOrder.html#method_addToBody"
+        },                {
+            "fqsen": "\\Utilities\\Paypal\\PayPalOrder\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/Utilities-Paypal-PayPalOrder.html#method___construct"
+        },                {
+            "fqsen": "\\Utilities\\Paypal\\PayPalOrder\u003A\u003A\u0024_request",
+            "name": "_request",
+            "summary": "",
+            "url": "classes/Utilities-Paypal-PayPalOrder.html#property__request"
+        },                {
+            "fqsen": "\\Utilities\\Paypal\\PayPalOrder\u003A\u003A\u0024_body",
+            "name": "_body",
+            "summary": "",
+            "url": "classes/Utilities-Paypal-PayPalOrder.html#property__body"
+        },                {
+            "fqsen": "\\Utilities\\Paypal\\PayPalOrder\u003A\u003A\u0024_purchaseUnitTemplate",
+            "name": "_purchaseUnitTemplate",
+            "summary": "",
+            "url": "classes/Utilities-Paypal-PayPalOrder.html#property__purchaseUnitTemplate"
+        },                {
+            "fqsen": "\\Utilities\\Paypal\\PayPalOrder\u003A\u003A\u0024_itemTemplate",
+            "name": "_itemTemplate",
+            "summary": "",
+            "url": "classes/Utilities-Paypal-PayPalOrder.html#property__itemTemplate"
+        },                {
+            "fqsen": "\\Utilities\\PixelPay\\PixelPayOrder",
+            "name": "PixelPayOrder",
+            "summary": "",
+            "url": "classes/Utilities-PixelPay-PixelPayOrder.html"
+        },                {
+            "fqsen": "\\Utilities\\PixelPay\\PixelPayOrder\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/Utilities-PixelPay-PixelPayOrder.html#method___construct"
+        },                {
+            "fqsen": "\\Utilities\\PixelPay\\PixelPayOrder\u003A\u003A\u0024_request",
+            "name": "_request",
+            "summary": "",
+            "url": "classes/Utilities-PixelPay-PixelPayOrder.html#property__request"
+        },                {
+            "fqsen": "\\Utilities\\PixelPay\\PixelPayOrder\u003A\u003A\u0024_apirurl",
+            "name": "_apirurl",
+            "summary": "",
+            "url": "classes/Utilities-PixelPay-PixelPayOrder.html#property__apirurl"
+        },                {
+            "fqsen": "\\Utilities\\PixelPay\\PixelPayOrder\u003A\u003A\u0024_body",
+            "name": "_body",
+            "summary": "",
+            "url": "classes/Utilities-PixelPay-PixelPayOrder.html#property__body"
         },                {
             "fqsen": "\\",
             "name": "\\",
@@ -791,6 +1046,16 @@ Search.appendIndex(
             "summary": "",
             "url": "namespaces/controllers-admin.html"
         },                {
+            "fqsen": "\\Controllers\\Api",
+            "name": "Api",
+            "summary": "",
+            "url": "namespaces/controllers-api.html"
+        },                {
+            "fqsen": "\\Controllers\\Checkout",
+            "name": "Checkout",
+            "summary": "",
+            "url": "namespaces/controllers-checkout.html"
+        },                {
             "fqsen": "\\Controllers",
             "name": "Controllers",
             "summary": "",
@@ -800,6 +1065,11 @@ Search.appendIndex(
             "name": "Mnt",
             "summary": "",
             "url": "namespaces/controllers-mnt.html"
+        },                {
+            "fqsen": "\\Controllers\\Rpts",
+            "name": "Rpts",
+            "summary": "",
+            "url": "namespaces/controllers-rpts.html"
         },                {
             "fqsen": "\\Controllers\\Sec",
             "name": "Sec",
@@ -825,6 +1095,16 @@ Search.appendIndex(
             "name": "Utilities",
             "summary": "",
             "url": "namespaces/utilities.html"
+        },                {
+            "fqsen": "\\Utilities\\Paypal",
+            "name": "Paypal",
+            "summary": "",
+            "url": "namespaces/utilities-paypal.html"
+        },                {
+            "fqsen": "\\Utilities\\PixelPay",
+            "name": "PixelPay",
+            "summary": "",
+            "url": "namespaces/utilities-pixelpay.html"
         },                {
             "fqsen": "\\Views",
             "name": "Views",

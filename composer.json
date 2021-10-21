@@ -1,11 +1,15 @@
 {
+    "autoload": {
+      "psr-0": {"":"src/"}
+    },
     "require": {
         "phpdocumentor/phpdocumentor": "^3.0",
-        "leafo/lessphp": "^0.4.0",
+        "wikimedia/less.php": "^3.1.0",
         "paypal/paypal-checkout-sdk": "1.0.1"
     },
     "scripts" :{
       "docs": "./vendor/phpdocumentor/phpdocumentor/bin/phpdoc -t ./docs/manual_tecnico",
-      "less": "./vendor/leafo/lessphp/plessc -f=compressed ./public/css_src/style.less > ./public/css/appstyle.css"
+      "less": "./vendor/bin/lessc --compress ./public/css_src/style.less ./public/css/appstyle.css"
+      
     }
 }

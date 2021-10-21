@@ -1,0 +1,122 @@
+header nav {
+  position: fixed;
+  left: 0px;
+  width: 100vw;
+  margin-top: 52px;
+  bottom: 0px;
+  height: ~"calc(100% - 51px)";
+  transform: translateX(-100vw);
+  background-color: @primary_bg;
+  transition: transform 250ms ease-in-out;
+  z-index: 1000;
+}
+
+
+header nav ul {
+  /* display: flex;
+  justify-content: stretch;
+  align-items: center;
+  padding: 0px;
+  list-style: none;
+  margin: 0px;*/
+  padding: 0px;
+  margin: 0px;
+  border-top: 1px solid @primary_text;
+}
+
+header ul li {
+  list-style: none;
+  cursor: pointer;
+  border-bottom: 1px solid @primary_text;
+}
+
+header ul li a,
+header ul li span {
+  display: flex;
+  padding: 1rem;
+  color: @primary_text;
+  text-decoration: none;
+  transition: background-color 0.5s ease;
+}
+
+header ul li a:hover {
+  background-color: @primary_bg300;
+  transition: background-color 0.5s ease;
+}
+
+header input[type=checkbox] {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  display: none;
+}
+
+header input[type="checkbox"]:checked~#menu {
+  transform: translateX(0);
+}
+
+.menu_toggle_icon {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  cursor: pointer;
+  padding: 0.5rem;
+  margin-left: 0.5rem;
+  z-index: 99;
+  height: 33px;
+  width: 42px;
+}
+
+.hmb {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  height: 3px;
+  width: 100%;
+  background-color: @primary_text;
+  border-radius: 2px;
+}
+
+.hrz {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  position: relative;
+  float: left;
+  margin-top: 3px;
+}
+
+.dgn.pt-1 {
+  position: relative;
+  transition: all 0.3s;
+  box-sizing: border-box;
+  float: left;
+}
+
+.dgn.pt-2 {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  position: relative;
+  float: left;
+  margin-top: 3px;
+}
+
+header input[type=checkbox]:checked~.menu_toggle_icon>.hrz {
+  transition: all 0.3s;
+  opacity: 0;
+}
+
+header input[type=checkbox]:checked~.menu_toggle_icon>.dgn.pt-1 {
+  transition: all 0.3s;
+  transform: rotate(135deg);
+  margin-top: 7px;
+}
+
+header input[type=checkbox]:checked~.menu_toggle_icon>.dgn.pt-2 {
+  transition: all 0.3s;
+  transform: rotate(-135deg);
+  margin-top: -9px;
+}
+
+@media @md {
+  header nav {
+    width: 380px;
+    transform: translateX(-380px);
+  }
+}

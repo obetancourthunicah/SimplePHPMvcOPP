@@ -2,10 +2,25 @@ label {
   font-weight: 700;
 }
 
-input {
+input,
+textarea,
+select {
   font-size: 1rem;
   padding: 0.75rem 0.5rem;
   border: 1px solid @primary_bg300;
+  outline-style: none;
+  margin:0px;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0px;
+  background-image: url('data:image/svg+xml;base64, PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI2cHgiIGhlaWdodD0iM3B4IiB2aWV3Qm94PSIwIDAgNiAzIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA2IDMiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwb2x5Z29uIHBvaW50cz0iNS45OTIsMCAyLjk5MiwzIC0wLjAwOCwwICIvPjwvc3ZnPg==');
+  background-repeat: no-repeat;
+  background-position: e("calc(100% - 0.8rem)") center;
+  
 }
 
 input.width-full {
@@ -20,6 +35,7 @@ button {
   font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
+  margin:0px;
 }
 
 button:hover {
@@ -35,4 +51,18 @@ button.primary {
 
 button.primary:hover {
   box-shadow: 1px 1px 3px @primary_action_bg;
+}
+
+a.btn {
+  color: @primary_action_tx;
+  text-decoration: none;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a.w48 {
+  width:3rem;
+  height: 3rem;
 }
