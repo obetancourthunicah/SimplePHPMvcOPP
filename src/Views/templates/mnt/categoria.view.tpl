@@ -5,6 +5,7 @@
     <section>
     <label for="catid">Código</label>
     <input type="hidden" id="catid" name="catid" value="{{catid}}"/>
+    <input type="hidden" id="mode" name="mode" value="{{mode}}" />
     <input type="text" readonly name="catiddummy" value="{{catid}}"/>
     </section>
     <section>
@@ -13,6 +14,9 @@
     </section>
     <section>
       <label for="catest">Estado</label>
+      {{if readonly}}
+       <input type="hidden" id="catestdummy" name="catest" value="" />
+      {{endif readonly}}
       <select id="catest" name="catest" {{if readonly}}disabled{{endif readonly}}>
         <option value="ACT" {{catest_ACT}}>Activo</option>
         <option value="INA" {{catest_INA}}>Inactivo</option>

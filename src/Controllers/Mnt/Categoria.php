@@ -12,6 +12,13 @@ class Categoria extends PublicController
             "Ocurrió algo inesperado. Intente Nuevamente."
         );
     }
+    private function yeah()
+    {
+        \Utilities\Site::redirectToWithMsg(
+            "index.php?page=mnt_categorias",
+            "Operación ejecutada Satisfactoriamente!"
+        );
+    }
     public function run() :void
     {
         $viewData = array(
@@ -36,7 +43,38 @@ class Categoria extends PublicController
 
         if ($this->isPostBack()) {
             // se ejecuta al dar click sobre guardar
-            
+            $viewData["mode"] = $_POST["mode"];
+            $viewData["catid"] = $_POST["catid"] ;
+            $viewData["catnom"] = $_POST["catnom"];
+            $viewData["catest"] = $_POST["catest"];
+            // Validaciones de Errores
+            switch($viewData["mode"]) {
+            case "INS":
+                if ( \Dao\Mnt\Categorias::crearCategoria(
+                        $viewData["catnom"],
+                        $viewData["catest"]
+                    )
+                ) {
+                    $this->yeah();
+                }
+                break;
+            case "UPD":
+                if (\Dao\Mnt\Categorias::editarCategoria(
+                    $viewData["catnom"],
+                    $viewData["catest"],
+                    $viewData["catid"]
+                )) {
+                    $this->yeah();
+                }
+                break;
+            case "DEL":
+                if (\Dao\Mnt\Categorias::eliminarCategoria(
+                    $viewData["catid"]
+                )) {
+                    $this->yeah();
+                }
+                break;
+            }
         } else {
             // se ejecuta si se refresca o viene la peticion
             // desde la lista
