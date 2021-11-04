@@ -16,6 +16,36 @@ Search.appendIndex(
             "summary": "Ejecuta\u0020el\u0020controlador",
             "url": "classes/Controllers-Admin-Admin.html#method_run"
         },                {
+            "fqsen": "\\Controllers\\Checkout\\Accept",
+            "name": "Accept",
+            "summary": "Public\u0020Access\u0020Controller\u0020Base\u0020Class",
+            "url": "classes/Controllers-Checkout-Accept.html"
+        },                {
+            "fqsen": "\\Controllers\\Checkout\\Accept\u003A\u003Arun\u0028\u0029",
+            "name": "run",
+            "summary": "",
+            "url": "classes/Controllers-Checkout-Accept.html#method_run"
+        },                {
+            "fqsen": "\\Controllers\\Checkout\\Checkout",
+            "name": "Checkout",
+            "summary": "Public\u0020Access\u0020Controller\u0020Base\u0020Class",
+            "url": "classes/Controllers-Checkout-Checkout.html"
+        },                {
+            "fqsen": "\\Controllers\\Checkout\\Checkout\u003A\u003Arun\u0028\u0029",
+            "name": "run",
+            "summary": "",
+            "url": "classes/Controllers-Checkout-Checkout.html#method_run"
+        },                {
+            "fqsen": "\\Controllers\\Checkout\\Error",
+            "name": "Error",
+            "summary": "Public\u0020Access\u0020Controller\u0020Base\u0020Class",
+            "url": "classes/Controllers-Checkout-Error.html"
+        },                {
+            "fqsen": "\\Controllers\\Checkout\\Error\u003A\u003Arun\u0028\u0029",
+            "name": "run",
+            "summary": "",
+            "url": "classes/Controllers-Checkout-Error.html#method_run"
+        },                {
             "fqsen": "\\Controllers\\Error",
             "name": "Error",
             "summary": "Public\u0020Access\u0020Controller\u0020Base\u0020Class",
@@ -48,98 +78,43 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Controllers\\Mnt\\Categoria",
             "name": "Categoria",
-            "summary": "Private\u0020Access\u0020Controller\u0020Base\u0020Class",
+            "summary": "Public\u0020Access\u0020Controller\u0020Base\u0020Class",
             "url": "classes/Controllers-Mnt-Categoria.html"
+        },                {
+            "fqsen": "\\Controllers\\Mnt\\Categoria\u003A\u003Anope\u0028\u0029",
+            "name": "nope",
+            "summary": "",
+            "url": "classes/Controllers-Mnt-Categoria.html#method_nope"
+        },                {
+            "fqsen": "\\Controllers\\Mnt\\Categoria\u003A\u003Ayeah\u0028\u0029",
+            "name": "yeah",
+            "summary": "",
+            "url": "classes/Controllers-Mnt-Categoria.html#method_yeah"
         },                {
             "fqsen": "\\Controllers\\Mnt\\Categoria\u003A\u003Arun\u0028\u0029",
             "name": "run",
             "summary": "",
             "url": "classes/Controllers-Mnt-Categoria.html#method_run"
         },                {
-            "fqsen": "\\Controllers\\Mnt\\Categoria\u003A\u003A_load\u0028\u0029",
-            "name": "_load",
-            "summary": "",
-            "url": "classes/Controllers-Mnt-Categoria.html#method__load"
-        },                {
-            "fqsen": "\\Controllers\\Mnt\\Categoria\u003A\u003A_loadPostData\u0028\u0029",
-            "name": "_loadPostData",
-            "summary": "",
-            "url": "classes/Controllers-Mnt-Categoria.html#method__loadPostData"
-        },                {
-            "fqsen": "\\Controllers\\Mnt\\Categoria\u003A\u003A_setViewData\u0028\u0029",
-            "name": "_setViewData",
-            "summary": "",
-            "url": "classes/Controllers-Mnt-Categoria.html#method__setViewData"
-        },                {
-            "fqsen": "\\Controllers\\Mnt\\Categoria\u003A\u003A\u0024catid",
-            "name": "catid",
-            "summary": "",
-            "url": "classes/Controllers-Mnt-Categoria.html#property_catid"
-        },                {
-            "fqsen": "\\Controllers\\Mnt\\Categoria\u003A\u003A\u0024catnom",
-            "name": "catnom",
-            "summary": "",
-            "url": "classes/Controllers-Mnt-Categoria.html#property_catnom"
-        },                {
-            "fqsen": "\\Controllers\\Mnt\\Categoria\u003A\u003A\u0024catest",
-            "name": "catest",
-            "summary": "",
-            "url": "classes/Controllers-Mnt-Categoria.html#property_catest"
-        },                {
-            "fqsen": "\\Controllers\\Mnt\\Categoria\u003A\u003A\u0024catest_ACT",
-            "name": "catest_ACT",
-            "summary": "",
-            "url": "classes/Controllers-Mnt-Categoria.html#property_catest_ACT"
-        },                {
-            "fqsen": "\\Controllers\\Mnt\\Categoria\u003A\u003A\u0024catest_INA",
-            "name": "catest_INA",
-            "summary": "",
-            "url": "classes/Controllers-Mnt-Categoria.html#property_catest_INA"
-        },                {
-            "fqsen": "\\Controllers\\Mnt\\Categoria\u003A\u003A\u0024catest_PLN",
-            "name": "catest_PLN",
-            "summary": "",
-            "url": "classes/Controllers-Mnt-Categoria.html#property_catest_PLN"
-        },                {
-            "fqsen": "\\Controllers\\Mnt\\Categoria\u003A\u003A\u0024mode_dsc",
-            "name": "mode_dsc",
-            "summary": "",
-            "url": "classes/Controllers-Mnt-Categoria.html#property_mode_dsc"
-        },                {
-            "fqsen": "\\Controllers\\Mnt\\Categoria\u003A\u003A\u0024mode_adsc",
-            "name": "mode_adsc",
-            "summary": "",
-            "url": "classes/Controllers-Mnt-Categoria.html#property_mode_adsc"
-        },                {
-            "fqsen": "\\Controllers\\Mnt\\Categoria\u003A\u003A\u0024readonly",
-            "name": "readonly",
-            "summary": "",
-            "url": "classes/Controllers-Mnt-Categoria.html#property_readonly"
-        },                {
-            "fqsen": "\\Controllers\\Mnt\\Categoria\u003A\u003A\u0024showaction",
-            "name": "showaction",
-            "summary": "",
-            "url": "classes/Controllers-Mnt-Categoria.html#property_showaction"
-        },                {
-            "fqsen": "\\Controllers\\Mnt\\Categoria\u003A\u003A\u0024hasErrors",
-            "name": "hasErrors",
-            "summary": "",
-            "url": "classes/Controllers-Mnt-Categoria.html#property_hasErrors"
-        },                {
-            "fqsen": "\\Controllers\\Mnt\\Categoria\u003A\u003A\u0024aErrors",
-            "name": "aErrors",
-            "summary": "",
-            "url": "classes/Controllers-Mnt-Categoria.html#property_aErrors"
-        },                {
             "fqsen": "\\Controllers\\Mnt\\Categorias",
             "name": "Categorias",
-            "summary": "Private\u0020Access\u0020Controller\u0020Base\u0020Class",
+            "summary": "Public\u0020Access\u0020Controller\u0020Base\u0020Class",
             "url": "classes/Controllers-Mnt-Categorias.html"
         },                {
             "fqsen": "\\Controllers\\Mnt\\Categorias\u003A\u003Arun\u0028\u0029",
             "name": "run",
             "summary": "",
             "url": "classes/Controllers-Mnt-Categorias.html#method_run"
+        },                {
+            "fqsen": "\\Controllers\\Mnt\\Usuarios",
+            "name": "Usuarios",
+            "summary": "Private\u0020Access\u0020Controller\u0020Base\u0020Class",
+            "url": "classes/Controllers-Mnt-Usuarios.html"
+        },                {
+            "fqsen": "\\Controllers\\Mnt\\Usuarios\u003A\u003Arun\u0028\u0029",
+            "name": "run",
+            "summary": "",
+            "url": "classes/Controllers-Mnt-Usuarios.html#method_run"
         },                {
             "fqsen": "\\Controllers\\NoAuth",
             "name": "NoAuth",
@@ -210,6 +185,16 @@ Search.appendIndex(
             "name": "name",
             "summary": "",
             "url": "classes/Controllers-PublicController.html#property_name"
+        },                {
+            "fqsen": "\\Controllers\\Scores\\Scores",
+            "name": "Scores",
+            "summary": "Listado\u0020del\u0020WW\u0020para\u0020administrar\u0020las\u0020Partituras\u0020que\u0020estaran\u0020desplegadas\u0020en\nel\u0020cat\u00E1logo.",
+            "url": "classes/Controllers-Scores-Scores.html"
+        },                {
+            "fqsen": "\\Controllers\\Scores\\Scores\u003A\u003Arun\u0028\u0029",
+            "name": "run",
+            "summary": "Ejecuta\u0020el\u0020Controlador\u0020de\u0020Scores",
+            "url": "classes/Controllers-Scores-Scores.html#method_run"
         },                {
             "fqsen": "\\Controllers\\Sec\\Login",
             "name": "Login",
@@ -326,30 +311,30 @@ Search.appendIndex(
             "summary": "Clase\u0020base\u0020para\u0020todos\u0020los\u0020modelos\u0020de\u0020datos",
             "url": "classes/Dao-Mnt-Categorias.html"
         },                {
-            "fqsen": "\\Dao\\Mnt\\Categorias\u003A\u003AgetAll\u0028\u0029",
-            "name": "getAll",
+            "fqsen": "\\Dao\\Mnt\\Categorias\u003A\u003AobtenerCategorias\u0028\u0029",
+            "name": "obtenerCategorias",
             "summary": "",
-            "url": "classes/Dao-Mnt-Categorias.html#method_getAll"
+            "url": "classes/Dao-Mnt-Categorias.html#method_obtenerCategorias"
         },                {
-            "fqsen": "\\Dao\\Mnt\\Categorias\u003A\u003AgetOne\u0028\u0029",
-            "name": "getOne",
+            "fqsen": "\\Dao\\Mnt\\Categorias\u003A\u003AobtenerCategoria\u0028\u0029",
+            "name": "obtenerCategoria",
             "summary": "",
-            "url": "classes/Dao-Mnt-Categorias.html#method_getOne"
+            "url": "classes/Dao-Mnt-Categorias.html#method_obtenerCategoria"
         },                {
-            "fqsen": "\\Dao\\Mnt\\Categorias\u003A\u003Ainsert\u0028\u0029",
-            "name": "insert",
+            "fqsen": "\\Dao\\Mnt\\Categorias\u003A\u003AcrearCategoria\u0028\u0029",
+            "name": "crearCategoria",
             "summary": "",
-            "url": "classes/Dao-Mnt-Categorias.html#method_insert"
+            "url": "classes/Dao-Mnt-Categorias.html#method_crearCategoria"
         },                {
-            "fqsen": "\\Dao\\Mnt\\Categorias\u003A\u003Aupdate\u0028\u0029",
-            "name": "update",
+            "fqsen": "\\Dao\\Mnt\\Categorias\u003A\u003AeditarCategoria\u0028\u0029",
+            "name": "editarCategoria",
             "summary": "",
-            "url": "classes/Dao-Mnt-Categorias.html#method_update"
+            "url": "classes/Dao-Mnt-Categorias.html#method_editarCategoria"
         },                {
-            "fqsen": "\\Dao\\Mnt\\Categorias\u003A\u003Adelete\u0028\u0029",
-            "name": "delete",
+            "fqsen": "\\Dao\\Mnt\\Categorias\u003A\u003AeliminarCategoria\u0028\u0029",
+            "name": "eliminarCategoria",
             "summary": "",
-            "url": "classes/Dao-Mnt-Categorias.html#method_delete"
+            "url": "classes/Dao-Mnt-Categorias.html#method_eliminarCategoria"
         },                {
             "fqsen": "\\Dao\\Security\\Estados",
             "name": "Estados",
@@ -440,6 +425,11 @@ Search.appendIndex(
             "name": "addNewRol",
             "summary": "",
             "url": "classes/Dao-Security-Security.html#method_addNewRol"
+        },                {
+            "fqsen": "\\Dao\\Security\\Security\u003A\u003AisUsuarioInRol\u0028\u0029",
+            "name": "isUsuarioInRol",
+            "summary": "",
+            "url": "classes/Dao-Security-Security.html#method_isUsuarioInRol"
         },                {
             "fqsen": "\\Dao\\Security\\Security\u003A\u003AgetRolesByUsuario\u0028\u0029",
             "name": "getRolesByUsuario",
@@ -651,276 +641,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Utilities-Enum.html#constant_NONE"
         },                {
-            "fqsen": "\\Utilities\\Security",
-            "name": "Security",
-            "summary": "",
-            "url": "classes/Utilities-Security.html"
-        },                {
-            "fqsen": "\\Utilities\\Security\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "",
-            "url": "classes/Utilities-Security.html#method___construct"
-        },                {
-            "fqsen": "\\Utilities\\Security\u003A\u003A__clone\u0028\u0029",
-            "name": "__clone",
-            "summary": "",
-            "url": "classes/Utilities-Security.html#method___clone"
-        },                {
-            "fqsen": "\\Utilities\\Security\u003A\u003Alogout\u0028\u0029",
-            "name": "logout",
-            "summary": "",
-            "url": "classes/Utilities-Security.html#method_logout"
-        },                {
-            "fqsen": "\\Utilities\\Security\u003A\u003Alogin\u0028\u0029",
-            "name": "login",
-            "summary": "",
-            "url": "classes/Utilities-Security.html#method_login"
-        },                {
-            "fqsen": "\\Utilities\\Security\u003A\u003AisLogged\u0028\u0029",
-            "name": "isLogged",
-            "summary": "",
-            "url": "classes/Utilities-Security.html#method_isLogged"
-        },                {
-            "fqsen": "\\Utilities\\Security\u003A\u003AgetUser\u0028\u0029",
-            "name": "getUser",
-            "summary": "",
-            "url": "classes/Utilities-Security.html#method_getUser"
-        },                {
-            "fqsen": "\\Utilities\\Security\u003A\u003AgetUserId\u0028\u0029",
-            "name": "getUserId",
-            "summary": "",
-            "url": "classes/Utilities-Security.html#method_getUserId"
-        },                {
-            "fqsen": "\\Utilities\\Security\u003A\u003AisAuthorized\u0028\u0029",
-            "name": "isAuthorized",
-            "summary": "",
-            "url": "classes/Utilities-Security.html#method_isAuthorized"
-        },                {
-            "fqsen": "\\Utilities\\Security\u003A\u003AisInRol\u0028\u0029",
-            "name": "isInRol",
-            "summary": "",
-            "url": "classes/Utilities-Security.html#method_isInRol"
-        },                {
-            "fqsen": "\\Utilities\\Site",
-            "name": "Site",
-            "summary": "",
-            "url": "classes/Utilities-Site.html"
-        },                {
-            "fqsen": "\\Utilities\\Site\u003A\u003Aconfigure\u0028\u0029",
-            "name": "configure",
-            "summary": "",
-            "url": "classes/Utilities-Site.html#method_configure"
-        },                {
-            "fqsen": "\\Utilities\\Site\u003A\u003AgetPageRequest\u0028\u0029",
-            "name": "getPageRequest",
-            "summary": "",
-            "url": "classes/Utilities-Site.html#method_getPageRequest"
-        },                {
-            "fqsen": "\\Utilities\\Site\u003A\u003AredirectTo\u0028\u0029",
-            "name": "redirectTo",
-            "summary": "",
-            "url": "classes/Utilities-Site.html#method_redirectTo"
-        },                {
-            "fqsen": "\\Utilities\\Site\u003A\u003AredirectToWithMsg\u0028\u0029",
-            "name": "redirectToWithMsg",
-            "summary": "",
-            "url": "classes/Utilities-Site.html#method_redirectToWithMsg"
-        },                {
-            "fqsen": "\\Utilities\\Site\u003A\u003AaddLink\u0028\u0029",
-            "name": "addLink",
-            "summary": "",
-            "url": "classes/Utilities-Site.html#method_addLink"
-        },                {
-            "fqsen": "\\Utilities\\Site\u003A\u003AaddBeginScript\u0028\u0029",
-            "name": "addBeginScript",
-            "summary": "",
-            "url": "classes/Utilities-Site.html#method_addBeginScript"
-        },                {
-            "fqsen": "\\Utilities\\Site\u003A\u003AaddEndScript\u0028\u0029",
-            "name": "addEndScript",
-            "summary": "",
-            "url": "classes/Utilities-Site.html#method_addEndScript"
-        },                {
-            "fqsen": "\\Utilities\\Validators",
-            "name": "Validators",
-            "summary": "",
-            "url": "classes/Utilities-Validators.html"
-        },                {
-            "fqsen": "\\Utilities\\Validators\u003A\u003AIsEmpty\u0028\u0029",
-            "name": "IsEmpty",
-            "summary": "",
-            "url": "classes/Utilities-Validators.html#method_IsEmpty"
-        },                {
-            "fqsen": "\\Utilities\\Validators\u003A\u003AIsValidEmail\u0028\u0029",
-            "name": "IsValidEmail",
-            "summary": "",
-            "url": "classes/Utilities-Validators.html#method_IsValidEmail"
-        },                {
-            "fqsen": "\\Utilities\\Validators\u003A\u003AIsValidPassword\u0028\u0029",
-            "name": "IsValidPassword",
-            "summary": "",
-            "url": "classes/Utilities-Validators.html#method_IsValidPassword"
-        },                {
-            "fqsen": "\\Utilities\\Validators\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "",
-            "url": "classes/Utilities-Validators.html#method___construct"
-        },                {
-            "fqsen": "\\Utilities\\Validators\u003A\u003A__clone\u0028\u0029",
-            "name": "__clone",
-            "summary": "",
-            "url": "classes/Utilities-Validators.html#method___clone"
-        },                {
-            "fqsen": "\\Views\\Renderer",
-            "name": "Renderer",
-            "summary": "Renderer\u0020View\u0020Utility",
-            "url": "classes/Views-Renderer.html"
-        },                {
-            "fqsen": "\\Views\\Renderer\u003A\u003Arender\u0028\u0029",
-            "name": "render",
-            "summary": "Renderiza\u0020el\u0020documento\u0020html\u0020con\u0020los\u0020datos\u0020enviados",
-            "url": "classes/Views-Renderer.html#method_render"
-        },                {
-            "fqsen": "\\Views\\Renderer\u003A\u003A_renderTemplate\u0028\u0029",
-            "name": "_renderTemplate",
-            "summary": "Renderiza\u0020los\u0020bloques\u0020de\u0020Plantillas",
-            "url": "classes/Views-Renderer.html#method__renderTemplate"
-        },                {
-            "fqsen": "\\Views\\Renderer\u003A\u003A_parseTemplate\u0028\u0029",
-            "name": "_parseTemplate",
-            "summary": "Obtiene\u0020los\u0020Macro\u0020Bloques\u0020de\u0020Plantillas",
-            "url": "classes/Views-Renderer.html#method__parseTemplate"
-        },                {
-            "fqsen": "\\Views\\Renderer\u003A\u003ArewriteUrl\u0028\u0029",
-            "name": "rewriteUrl",
-            "summary": "",
-            "url": "classes/Views-Renderer.html#method_rewriteUrl"
-        },                {
-            "fqsen": "\\Views\\Renderer\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Constructor\u0020privado\u0020evita\u0020instancia\u0020de\u0020esta\u0020clase",
-            "url": "classes/Views-Renderer.html#method___construct"
-        },                {
-            "fqsen": "\\Controllers\\Api\\GetHeroes",
-            "name": "GetHeroes",
-            "summary": "Public\u0020Access\u0020Controller\u0020Base\u0020Class",
-            "url": "classes/Controllers-Api-GetHeroes.html"
-        },                {
-            "fqsen": "\\Controllers\\Api\\GetHeroes\u003A\u003Arun\u0028\u0029",
-            "name": "run",
-            "summary": "",
-            "url": "classes/Controllers-Api-GetHeroes.html#method_run"
-        },                {
-            "fqsen": "\\Controllers\\Checkout\\Accept",
-            "name": "Accept",
-            "summary": "Public\u0020Access\u0020Controller\u0020Base\u0020Class",
-            "url": "classes/Controllers-Checkout-Accept.html"
-        },                {
-            "fqsen": "\\Controllers\\Checkout\\Accept\u003A\u003Arun\u0028\u0029",
-            "name": "run",
-            "summary": "",
-            "url": "classes/Controllers-Checkout-Accept.html#method_run"
-        },                {
-            "fqsen": "\\Controllers\\Checkout\\Checkout",
-            "name": "Checkout",
-            "summary": "Public\u0020Access\u0020Controller\u0020Base\u0020Class",
-            "url": "classes/Controllers-Checkout-Checkout.html"
-        },                {
-            "fqsen": "\\Controllers\\Checkout\\Checkout\u003A\u003Arun\u0028\u0029",
-            "name": "run",
-            "summary": "",
-            "url": "classes/Controllers-Checkout-Checkout.html#method_run"
-        },                {
-            "fqsen": "\\Controllers\\Checkout\\Error",
-            "name": "Error",
-            "summary": "Public\u0020Access\u0020Controller\u0020Base\u0020Class",
-            "url": "classes/Controllers-Checkout-Error.html"
-        },                {
-            "fqsen": "\\Controllers\\Checkout\\Error\u003A\u003Arun\u0028\u0029",
-            "name": "run",
-            "summary": "",
-            "url": "classes/Controllers-Checkout-Error.html#method_run"
-        },                {
-            "fqsen": "\\Controllers\\Mnt\\Heroe",
-            "name": "Heroe",
-            "summary": "Private\u0020Access\u0020Controller\u0020Base\u0020Class",
-            "url": "classes/Controllers-Mnt-Heroe.html"
-        },                {
-            "fqsen": "\\Controllers\\Mnt\\Heroe\u003A\u003Arun\u0028\u0029",
-            "name": "run",
-            "summary": "",
-            "url": "classes/Controllers-Mnt-Heroe.html#method_run"
-        },                {
-            "fqsen": "\\Controllers\\Mnt\\Heroe\u003A\u003AverificarToken\u0028\u0029",
-            "name": "verificarToken",
-            "summary": "",
-            "url": "classes/Controllers-Mnt-Heroe.html#method_verificarToken"
-        },                {
-            "fqsen": "\\Controllers\\Mnt\\Heroes",
-            "name": "Heroes",
-            "summary": "Private\u0020Access\u0020Controller\u0020Base\u0020Class",
-            "url": "classes/Controllers-Mnt-Heroes.html"
-        },                {
-            "fqsen": "\\Controllers\\Mnt\\Heroes\u003A\u003Arun\u0028\u0029",
-            "name": "run",
-            "summary": "",
-            "url": "classes/Controllers-Mnt-Heroes.html#method_run"
-        },                {
-            "fqsen": "\\Controllers\\Mnt\\Usuarios",
-            "name": "Usuarios",
-            "summary": "Private\u0020Access\u0020Controller\u0020Base\u0020Class",
-            "url": "classes/Controllers-Mnt-Usuarios.html"
-        },                {
-            "fqsen": "\\Controllers\\Mnt\\Usuarios\u003A\u003Arun\u0028\u0029",
-            "name": "run",
-            "summary": "",
-            "url": "classes/Controllers-Mnt-Usuarios.html#method_run"
-        },                {
-            "fqsen": "\\Controllers\\Rpts\\ReportUsers",
-            "name": "ReportUsers",
-            "summary": "Public\u0020Access\u0020Controller\u0020Base\u0020Class",
-            "url": "classes/Controllers-Rpts-ReportUsers.html"
-        },                {
-            "fqsen": "\\Controllers\\Rpts\\ReportUsers\u003A\u003Arun\u0028\u0029",
-            "name": "run",
-            "summary": "",
-            "url": "classes/Controllers-Rpts-ReportUsers.html#method_run"
-        },                {
-            "fqsen": "\\Dao\\HeroPanel",
-            "name": "HeroPanel",
-            "summary": "Clase\u0020base\u0020para\u0020todos\u0020los\u0020modelos\u0020de\u0020datos",
-            "url": "classes/Dao-HeroPanel.html"
-        },                {
-            "fqsen": "\\Dao\\HeroPanel\u003A\u003AgetActiveHeroeos\u0028\u0029",
-            "name": "getActiveHeroeos",
-            "summary": "",
-            "url": "classes/Dao-HeroPanel.html#method_getActiveHeroeos"
-        },                {
-            "fqsen": "\\Dao\\HeroPanel\u003A\u003AgetAllHeroes\u0028\u0029",
-            "name": "getAllHeroes",
-            "summary": "",
-            "url": "classes/Dao-HeroPanel.html#method_getAllHeroes"
-        },                {
-            "fqsen": "\\Dao\\HeroPanel\u003A\u003AgetHeroeById\u0028\u0029",
-            "name": "getHeroeById",
-            "summary": "",
-            "url": "classes/Dao-HeroPanel.html#method_getHeroeById"
-        },                {
-            "fqsen": "\\Dao\\HeroPanel\u003A\u003AaddHero\u0028\u0029",
-            "name": "addHero",
-            "summary": "",
-            "url": "classes/Dao-HeroPanel.html#method_addHero"
-        },                {
-            "fqsen": "\\Dao\\HeroPanel\u003A\u003AupdateHero\u0028\u0029",
-            "name": "updateHero",
-            "summary": "",
-            "url": "classes/Dao-HeroPanel.html#method_updateHero"
-        },                {
-            "fqsen": "\\Dao\\HeroPanel\u003A\u003AdeleteHero\u0028\u0029",
-            "name": "deleteHero",
-            "summary": "",
-            "url": "classes/Dao-HeroPanel.html#method_deleteHero"
-        },                {
             "fqsen": "\\Utilities\\Nav",
             "name": "Nav",
             "summary": "",
@@ -1036,6 +756,161 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Utilities-PixelPay-PixelPayOrder.html#property__body"
         },                {
+            "fqsen": "\\Utilities\\Security",
+            "name": "Security",
+            "summary": "",
+            "url": "classes/Utilities-Security.html"
+        },                {
+            "fqsen": "\\Utilities\\Security\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/Utilities-Security.html#method___construct"
+        },                {
+            "fqsen": "\\Utilities\\Security\u003A\u003A__clone\u0028\u0029",
+            "name": "__clone",
+            "summary": "",
+            "url": "classes/Utilities-Security.html#method___clone"
+        },                {
+            "fqsen": "\\Utilities\\Security\u003A\u003Alogout\u0028\u0029",
+            "name": "logout",
+            "summary": "",
+            "url": "classes/Utilities-Security.html#method_logout"
+        },                {
+            "fqsen": "\\Utilities\\Security\u003A\u003Alogin\u0028\u0029",
+            "name": "login",
+            "summary": "",
+            "url": "classes/Utilities-Security.html#method_login"
+        },                {
+            "fqsen": "\\Utilities\\Security\u003A\u003AisLogged\u0028\u0029",
+            "name": "isLogged",
+            "summary": "",
+            "url": "classes/Utilities-Security.html#method_isLogged"
+        },                {
+            "fqsen": "\\Utilities\\Security\u003A\u003AgetUser\u0028\u0029",
+            "name": "getUser",
+            "summary": "",
+            "url": "classes/Utilities-Security.html#method_getUser"
+        },                {
+            "fqsen": "\\Utilities\\Security\u003A\u003AgetUserId\u0028\u0029",
+            "name": "getUserId",
+            "summary": "",
+            "url": "classes/Utilities-Security.html#method_getUserId"
+        },                {
+            "fqsen": "\\Utilities\\Security\u003A\u003AisAuthorized\u0028\u0029",
+            "name": "isAuthorized",
+            "summary": "",
+            "url": "classes/Utilities-Security.html#method_isAuthorized"
+        },                {
+            "fqsen": "\\Utilities\\Security\u003A\u003AisInRol\u0028\u0029",
+            "name": "isInRol",
+            "summary": "",
+            "url": "classes/Utilities-Security.html#method_isInRol"
+        },                {
+            "fqsen": "\\Utilities\\Site",
+            "name": "Site",
+            "summary": "",
+            "url": "classes/Utilities-Site.html"
+        },                {
+            "fqsen": "\\Utilities\\Site\u003A\u003Aconfigure\u0028\u0029",
+            "name": "configure",
+            "summary": "",
+            "url": "classes/Utilities-Site.html#method_configure"
+        },                {
+            "fqsen": "\\Utilities\\Site\u003A\u003AgetPageRequest\u0028\u0029",
+            "name": "getPageRequest",
+            "summary": "",
+            "url": "classes/Utilities-Site.html#method_getPageRequest"
+        },                {
+            "fqsen": "\\Utilities\\Site\u003A\u003AredirectTo\u0028\u0029",
+            "name": "redirectTo",
+            "summary": "",
+            "url": "classes/Utilities-Site.html#method_redirectTo"
+        },                {
+            "fqsen": "\\Utilities\\Site\u003A\u003AredirectToWithMsg\u0028\u0029",
+            "name": "redirectToWithMsg",
+            "summary": "",
+            "url": "classes/Utilities-Site.html#method_redirectToWithMsg"
+        },                {
+            "fqsen": "\\Utilities\\Site\u003A\u003AaddLink\u0028\u0029",
+            "name": "addLink",
+            "summary": "",
+            "url": "classes/Utilities-Site.html#method_addLink"
+        },                {
+            "fqsen": "\\Utilities\\Site\u003A\u003AaddBeginScript\u0028\u0029",
+            "name": "addBeginScript",
+            "summary": "",
+            "url": "classes/Utilities-Site.html#method_addBeginScript"
+        },                {
+            "fqsen": "\\Utilities\\Site\u003A\u003AaddEndScript\u0028\u0029",
+            "name": "addEndScript",
+            "summary": "",
+            "url": "classes/Utilities-Site.html#method_addEndScript"
+        },                {
+            "fqsen": "\\Utilities\\Validators",
+            "name": "Validators",
+            "summary": "",
+            "url": "classes/Utilities-Validators.html"
+        },                {
+            "fqsen": "\\Utilities\\Validators\u003A\u003AIsEmpty\u0028\u0029",
+            "name": "IsEmpty",
+            "summary": "",
+            "url": "classes/Utilities-Validators.html#method_IsEmpty"
+        },                {
+            "fqsen": "\\Utilities\\Validators\u003A\u003AIsValidEmail\u0028\u0029",
+            "name": "IsValidEmail",
+            "summary": "",
+            "url": "classes/Utilities-Validators.html#method_IsValidEmail"
+        },                {
+            "fqsen": "\\Utilities\\Validators\u003A\u003AIsValidPassword\u0028\u0029",
+            "name": "IsValidPassword",
+            "summary": "",
+            "url": "classes/Utilities-Validators.html#method_IsValidPassword"
+        },                {
+            "fqsen": "\\Utilities\\Validators\u003A\u003AMatchesRegex\u0028\u0029",
+            "name": "MatchesRegex",
+            "summary": "",
+            "url": "classes/Utilities-Validators.html#method_MatchesRegex"
+        },                {
+            "fqsen": "\\Utilities\\Validators\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/Utilities-Validators.html#method___construct"
+        },                {
+            "fqsen": "\\Utilities\\Validators\u003A\u003A__clone\u0028\u0029",
+            "name": "__clone",
+            "summary": "",
+            "url": "classes/Utilities-Validators.html#method___clone"
+        },                {
+            "fqsen": "\\Views\\Renderer",
+            "name": "Renderer",
+            "summary": "Renderer\u0020View\u0020Utility",
+            "url": "classes/Views-Renderer.html"
+        },                {
+            "fqsen": "\\Views\\Renderer\u003A\u003Arender\u0028\u0029",
+            "name": "render",
+            "summary": "Renderiza\u0020el\u0020documento\u0020html\u0020con\u0020los\u0020datos\u0020enviados",
+            "url": "classes/Views-Renderer.html#method_render"
+        },                {
+            "fqsen": "\\Views\\Renderer\u003A\u003A_renderTemplate\u0028\u0029",
+            "name": "_renderTemplate",
+            "summary": "Renderiza\u0020los\u0020bloques\u0020de\u0020Plantillas",
+            "url": "classes/Views-Renderer.html#method__renderTemplate"
+        },                {
+            "fqsen": "\\Views\\Renderer\u003A\u003A_parseTemplate\u0028\u0029",
+            "name": "_parseTemplate",
+            "summary": "Obtiene\u0020los\u0020Macro\u0020Bloques\u0020de\u0020Plantillas",
+            "url": "classes/Views-Renderer.html#method__parseTemplate"
+        },                {
+            "fqsen": "\\Views\\Renderer\u003A\u003ArewriteUrl\u0028\u0029",
+            "name": "rewriteUrl",
+            "summary": "",
+            "url": "classes/Views-Renderer.html#method_rewriteUrl"
+        },                {
+            "fqsen": "\\Views\\Renderer\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "Constructor\u0020privado\u0020evita\u0020instancia\u0020de\u0020esta\u0020clase",
+            "url": "classes/Views-Renderer.html#method___construct"
+        },                {
             "fqsen": "\\",
             "name": "\\",
             "summary": "",
@@ -1045,11 +920,6 @@ Search.appendIndex(
             "name": "Admin",
             "summary": "",
             "url": "namespaces/controllers-admin.html"
-        },                {
-            "fqsen": "\\Controllers\\Api",
-            "name": "Api",
-            "summary": "",
-            "url": "namespaces/controllers-api.html"
         },                {
             "fqsen": "\\Controllers\\Checkout",
             "name": "Checkout",
@@ -1066,10 +936,10 @@ Search.appendIndex(
             "summary": "",
             "url": "namespaces/controllers-mnt.html"
         },                {
-            "fqsen": "\\Controllers\\Rpts",
-            "name": "Rpts",
+            "fqsen": "\\Controllers\\Scores",
+            "name": "Scores",
             "summary": "",
-            "url": "namespaces/controllers-rpts.html"
+            "url": "namespaces/controllers-scores.html"
         },                {
             "fqsen": "\\Controllers\\Sec",
             "name": "Sec",

@@ -13,6 +13,12 @@ class Nav {
                 "nav_label" => "Usuarios"
             );
         }
+        if (\Utilities\Security::isAuthorized($userID, "WW_Scores")) {
+            $tmpNAVIGATION[] = array(
+                "nav_url" => "index.php?page=scores_scores",
+                "nav_label" => "Partituras"
+            );
+        }
        
         \Utilities\Context::setContext("NAVIGATION", $tmpNAVIGATION);
     }

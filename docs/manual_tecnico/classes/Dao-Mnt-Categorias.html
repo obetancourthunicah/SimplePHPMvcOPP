@@ -54,10 +54,9 @@
                                                 <h4 class="phpdocumentor-sidebar__root-namespace"><a href="namespaces/controllers.html"><abbr title="\Controllers">Controllers</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                             <li><a href="namespaces/controllers-admin.html"><abbr title="\Controllers\Admin">Admin</abbr></a></li>
-                                            <li><a href="namespaces/controllers-api.html"><abbr title="\Controllers\Api">Api</abbr></a></li>
                                             <li><a href="namespaces/controllers-checkout.html"><abbr title="\Controllers\Checkout">Checkout</abbr></a></li>
                                             <li><a href="namespaces/controllers-mnt.html"><abbr title="\Controllers\Mnt">Mnt</abbr></a></li>
-                                            <li><a href="namespaces/controllers-rpts.html"><abbr title="\Controllers\Rpts">Rpts</abbr></a></li>
+                                            <li><a href="namespaces/controllers-scores.html"><abbr title="\Controllers\Scores">Scores</abbr></a></li>
                                             <li><a href="namespaces/controllers-sec.html"><abbr title="\Controllers\Sec">Sec</abbr></a></li>
                                     </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="namespaces/dao.html"><abbr title="\Dao">Dao</abbr></a></h4>
@@ -122,9 +121,9 @@
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Dao/Mnt/Categorias.class.php"><a href="files/src-dao-mnt-categorias-class.html"><abbr title="src/Dao/Mnt/Categorias.class.php">Categorias.class.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Dao/Mnt/Categorias.php"><a href="files/src-dao-mnt-categorias.html"><abbr title="src/Dao/Mnt/Categorias.php">Categorias.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">5</span>
+    <span class="phpdocumentor-element-found-in__line">6</span>
 </aside>
 
             <p class="phpdocumentor-summary">Clase base para todos los modelos de datos</p>
@@ -159,35 +158,35 @@
 <dd></dd>
 
                 <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Dao-Mnt-Categorias.html#method_delete">delete()</a>
+    <a href="classes/Dao-Mnt-Categorias.html#method_crearCategoria">crearCategoria()</a>
     <span>
                         &nbsp;: mixed    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Dao-Mnt-Categorias.html#method_getAll">getAll()</a>
+    <a href="classes/Dao-Mnt-Categorias.html#method_editarCategoria">editarCategoria()</a>
     <span>
                         &nbsp;: mixed    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Dao-Mnt-Categorias.html#method_getOne">getOne()</a>
+    <a href="classes/Dao-Mnt-Categorias.html#method_eliminarCategoria">eliminarCategoria()</a>
     <span>
                         &nbsp;: mixed    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Dao-Mnt-Categorias.html#method_insert">insert()</a>
+    <a href="classes/Dao-Mnt-Categorias.html#method_obtenerCategoria">obtenerCategoria()</a>
     <span>
                         &nbsp;: mixed    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Dao-Mnt-Categorias.html#method_update">update()</a>
+    <a href="classes/Dao-Mnt-Categorias.html#method_obtenerCategorias">obtenerCategorias()</a>
     <span>
                         &nbsp;: mixed    </span>
 </dt>
@@ -261,7 +260,7 @@
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Dao/Table.class.php"><a href="files/src-dao-table-class.html"><abbr title="src/Dao/Table.class.php">Table.class.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Dao/Table.php"><a href="files/src-dao-table.html"><abbr title="src/Dao/Table.php">Table.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">18</span>
 </aside>
@@ -291,7 +290,7 @@
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Dao/Table.class.php"><a href="files/src-dao-table-class.html"><abbr title="src/Dao/Table.class.php">Table.class.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Dao/Table.php"><a href="files/src-dao-table.html"><abbr title="src/Dao/Table.php">Table.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">10</span>
 </aside>
@@ -320,128 +319,12 @@
             -public
                                     -static                    "
 >
-    <h4 class="phpdocumentor-element__name" id="method_delete">
-        delete()
-        <a href="classes/Dao-Mnt-Categorias.html#method_delete" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_crearCategoria">
+        crearCategoria()
+        <a href="classes/Dao-Mnt-Categorias.html#method_crearCategoria" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Dao/Mnt/Categorias.class.php"><a href="files/src-dao-mnt-categorias-class.html"><abbr title="src/Dao/Mnt/Categorias.class.php">Categorias.class.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">34</span>
-</aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">delete</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$catid</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$catid</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-            <section class="phpdocumentor-description"></section>
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                    -static                    "
->
-    <h4 class="phpdocumentor-element__name" id="method_getAll">
-        getAll()
-        <a href="classes/Dao-Mnt-Categorias.html#method_getAll" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Dao/Mnt/Categorias.class.php"><a href="files/src-dao-mnt-categorias-class.html"><abbr title="src/Dao/Mnt/Categorias.class.php">Categorias.class.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">7</span>
-</aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">getAll</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-    
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-            <section class="phpdocumentor-description"></section>
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                    -static                    "
->
-    <h4 class="phpdocumentor-element__name" id="method_getOne">
-        getOne()
-        <a href="classes/Dao-Mnt-Categorias.html#method_getOne" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Dao/Mnt/Categorias.class.php"><a href="files/src-dao-mnt-categorias-class.html"><abbr title="src/Dao/Mnt/Categorias.class.php">Categorias.class.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">12</span>
-</aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">getOne</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$catid</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$catid</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-            <section class="phpdocumentor-description"></section>
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                    -static                    "
->
-    <h4 class="phpdocumentor-element__name" id="method_insert">
-        insert()
-        <a href="classes/Dao-Mnt-Categorias.html#method_insert" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Dao/Mnt/Categorias.class.php"><a href="files/src-dao-mnt-categorias-class.html"><abbr title="src/Dao/Mnt/Categorias.class.php">Categorias.class.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Dao/Mnt/Categorias.php"><a href="files/src-dao-mnt-categorias.html"><abbr title="src/Dao/Mnt/Categorias.php">Categorias.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">18</span>
 </aside>
@@ -449,7 +332,7 @@
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">insert</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$catnom</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$catest</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">crearCategoria</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$catnom</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$catest</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -485,20 +368,20 @@
             -public
                                     -static                    "
 >
-    <h4 class="phpdocumentor-element__name" id="method_update">
-        update()
-        <a href="classes/Dao-Mnt-Categorias.html#method_update" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_editarCategoria">
+        editarCategoria()
+        <a href="classes/Dao-Mnt-Categorias.html#method_editarCategoria" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Dao/Mnt/Categorias.class.php"><a href="files/src-dao-mnt-categorias-class.html"><abbr title="src/Dao/Mnt/Categorias.class.php">Categorias.class.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Dao/Mnt/Categorias.php"><a href="files/src-dao-mnt-categorias.html"><abbr title="src/Dao/Mnt/Categorias.php">Categorias.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">26</span>
+    <span class="phpdocumentor-element-found-in__line">28</span>
 </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">update</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$catnom</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$catest</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$catid</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">editarCategoria</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$catnom</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$catest</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$catid</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -526,6 +409,122 @@
             </dd>
             </dl>
 
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_eliminarCategoria">
+        eliminarCategoria()
+        <a href="classes/Dao-Mnt-Categorias.html#method_eliminarCategoria" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Dao/Mnt/Categorias.php"><a href="files/src-dao-mnt-categorias.html"><abbr title="src/Dao/Mnt/Categorias.php">Categorias.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">41</span>
+</aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">eliminarCategoria</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$catid</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$catid</span>
+                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_obtenerCategoria">
+        obtenerCategoria()
+        <a href="classes/Dao-Mnt-Categorias.html#method_obtenerCategoria" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Dao/Mnt/Categorias.php"><a href="files/src-dao-mnt-categorias.html"><abbr title="src/Dao/Mnt/Categorias.php">Categorias.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">13</span>
+</aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">obtenerCategoria</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$catid</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$catid</span>
+                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_obtenerCategorias">
+        obtenerCategorias()
+        <a href="classes/Dao-Mnt-Categorias.html#method_obtenerCategorias" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Dao/Mnt/Categorias.php"><a href="files/src-dao-mnt-categorias.html"><abbr title="src/Dao/Mnt/Categorias.php">Categorias.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">8</span>
+</aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">obtenerCategorias</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+    
+    
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
@@ -546,7 +545,7 @@
         <a href="classes/Dao-Table.html#method__getStructFrom" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Dao/Table.class.php"><a href="files/src-dao-table-class.html"><abbr title="src/Dao/Table.class.php">Table.class.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Dao/Table.php"><a href="files/src-dao-table.html"><abbr title="src/Dao/Table.php">Table.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">108</span>
 </aside>
@@ -595,7 +594,7 @@
         <a href="classes/Dao-Table.html#method_executeNonQuery" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Dao/Table.class.php"><a href="files/src-dao-table-class.html"><abbr title="src/Dao/Table.class.php">Table.class.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Dao/Table.php"><a href="files/src-dao-table.html"><abbr title="src/Dao/Table.php">Table.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">93</span>
 </aside>
@@ -651,7 +650,7 @@
         <a href="classes/Dao-Table.html#method_getBindType" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Dao/Table.class.php"><a href="files/src-dao-table-class.html"><abbr title="src/Dao/Table.class.php">Table.class.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Dao/Table.php"><a href="files/src-dao-table.html"><abbr title="src/Dao/Table.php">Table.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">29</span>
 </aside>
@@ -693,7 +692,7 @@
         <a href="classes/Dao-Table.html#method_getConn" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Dao/Table.class.php"><a href="files/src-dao-table-class.html"><abbr title="src/Dao/Table.class.php">Table.class.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Dao/Table.php"><a href="files/src-dao-table.html"><abbr title="src/Dao/Table.php">Table.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">11</span>
 </aside>
@@ -725,7 +724,7 @@
         <a href="classes/Dao-Table.html#method_obtenerRegistros" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Dao/Table.class.php"><a href="files/src-dao-table-class.html"><abbr title="src/Dao/Table.class.php">Table.class.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Dao/Table.php"><a href="files/src-dao-table.html"><abbr title="src/Dao/Table.php">Table.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">58</span>
 </aside>
@@ -781,7 +780,7 @@
         <a href="classes/Dao-Table.html#method_obtenerUnRegistro" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Dao/Table.class.php"><a href="files/src-dao-table-class.html"><abbr title="src/Dao/Table.class.php">Table.class.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Dao/Table.php"><a href="files/src-dao-table.html"><abbr title="src/Dao/Table.php">Table.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">75</span>
 </aside>

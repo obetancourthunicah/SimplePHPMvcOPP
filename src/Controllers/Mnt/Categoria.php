@@ -30,7 +30,7 @@ class Categoria extends PublicController
             "catest_INA" => "",
             "catest_PLN"=>"",
             "hasErrors" => false,
-            "aErrors" => array(),
+            "Errors" => array(),
             "showaction"=>true,
             "readonly" => false
         );
@@ -47,33 +47,56 @@ class Categoria extends PublicController
             $viewData["catid"] = $_POST["catid"] ;
             $viewData["catnom"] = $_POST["catnom"];
             $viewData["catest"] = $_POST["catest"];
+            $viewData["xsrftoken"] = $_POST["xsrftoken"];
+            // Validate XSRF Token
+            if (!isset($_SESSION["xsrftoken"]) || $viewData["xsrftoken"] != $_SESSION["xsrftoken"]) {
+                $this->nope();
+            }
             // Validaciones de Errores
-            switch($viewData["mode"]) {
-            case "INS":
-                if ( \Dao\Mnt\Categorias::crearCategoria(
+            if (\Utilities\Validators::IsEmpty($viewData["catnom"])) {
+                $viewData["hasErrors"] = true;
+                $viewData["Errors"][] = "El nombre no Puede Ir Vacio!";
+            }
+            if (($viewData["catest"] == "INA"
+                || $viewData["catest"] == "ACT"
+                || $viewData["catest"] == "PLN"
+                ) == false
+            ) {
+                $viewData["hasErrors"] = true;
+                $viewData["Errors"][] = "Estado de Categoria Incorrecto!";
+            }
+
+            
+            if (!$viewData["hasErrors"]) {
+                switch($viewData["mode"]) {
+                case "INS":
+                    if (\Dao\Mnt\Categorias::crearCategoria(
                         $viewData["catnom"],
                         $viewData["catest"]
                     )
-                ) {
-                    $this->yeah();
+                    ) {
+                        $this->yeah();
+                    }
+                    break;
+                case "UPD":
+                    if (\Dao\Mnt\Categorias::editarCategoria(
+                        $viewData["catnom"],
+                        $viewData["catest"],
+                        $viewData["catid"]
+                    )
+                    ) {
+                        $this->yeah();
+                    }
+                    break;
+                case "DEL":
+                    if (\Dao\Mnt\Categorias::eliminarCategoria(
+                        $viewData["catid"]
+                    )
+                    ) {
+                        $this->yeah();
+                    }
+                    break;
                 }
-                break;
-            case "UPD":
-                if (\Dao\Mnt\Categorias::editarCategoria(
-                    $viewData["catnom"],
-                    $viewData["catest"],
-                    $viewData["catid"]
-                )) {
-                    $this->yeah();
-                }
-                break;
-            case "DEL":
-                if (\Dao\Mnt\Categorias::eliminarCategoria(
-                    $viewData["catid"]
-                )) {
-                    $this->yeah();
-                }
-                break;
             }
         } else {
             // se ejecuta si se refresca o viene la peticion
@@ -119,7 +142,9 @@ class Categoria extends PublicController
             }
 
         }
-
+        // Generar un token XSRF para evitar esos ataques
+        $viewData["xsrftoken"] = md5($this->name . random_int(10000, 99999));
+        $_SESSION["xsrftoken"] = $viewData["xsrftoken"];
 
         \Views\Renderer::render("mnt/categoria", $viewData);
     }

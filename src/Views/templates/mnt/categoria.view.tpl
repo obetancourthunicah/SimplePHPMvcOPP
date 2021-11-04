@@ -6,6 +6,7 @@
     <label for="catid">Código</label>
     <input type="hidden" id="catid" name="catid" value="{{catid}}"/>
     <input type="hidden" id="mode" name="mode" value="{{mode}}" />
+    <input type="hidden" id="xsrftoken" name="xsrftoken" value="{{xsrftoken}}" />
     <input type="text" readonly name="catiddummy" value="{{catid}}"/>
     </section>
     <section>
@@ -26,9 +27,9 @@
     {{if hasErrors}}
         <section>
           <ul>
-            {{foreach aErrors}}
+            {{foreach Errors}}
                 <li>{{this}}</li>
-            {{endfor aErrors}}
+            {{endfor Errors}}
           </ul>
         </section>
     {{endif hasErrors}}
