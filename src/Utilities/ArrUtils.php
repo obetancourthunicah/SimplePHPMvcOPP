@@ -43,6 +43,31 @@
         }
     }
 
+    /**
+     * From a key value array creates an array structure ideal
+     * for options structures in an html select input control
+     *
+     * @param array  $baseArray     key value array
+     * @param string $codeName      value of key
+     * @param string $textName      value of text key
+     * @param string $selectedName  value of selected key
+     * @param string $selectedValue value of selected option
+     *
+     * @return array
+     */
+    public static function toOptionsArray($baseArray, $codeName, $textName, $selectedName, $selectedValue)
+    {
+        $tmpArray = array();
+        foreach ($baseArray as $key=>$value) {
+            $tmpArray[] = array(
+                $codeName =>$key,
+                $textName =>$value,
+                $selectedName => ($selectedValue == $value)?'selected': ''
+            );
+        }
+        return $tmpArray;
+    }
+
     private function __construct()
     {
       
