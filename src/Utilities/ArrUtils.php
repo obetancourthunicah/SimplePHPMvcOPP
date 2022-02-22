@@ -62,7 +62,7 @@
             $tmpArray[] = array(
                 $codeName =>$key,
                 $textName =>$value,
-                $selectedName => ($selectedValue == $value)?'selected': ''
+                $selectedName => ($selectedValue == $key)?'selected': ''
             );
         }
         return $tmpArray;

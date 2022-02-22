@@ -49,12 +49,68 @@ class Categoria extends PublicController
     }
     private function handlePost()
     {
+        \Utilities\ArrUtils::mergeFullArrayTo($_POST, $this->_viewData);
+        $this->_viewData["catid"] = intval($this->_viewData["catid"], 10);
+        if (!\Utilities\Validators::isMatch(
+            $this->_viewData["catest"],
+            "/^(ACT)|(INA)$/"
+        )
+        ) {
+            $this->_viewData["errors"][] = "Categoría debe ser ACT o INA";
+        }
 
+        if (isset($this->_viewData["errors"]) && count($this->_viewData["errors"]) > 0 ) {
+
+        } else {
+            switch ($this->_viewData["mode"]) {
+            case 'INS':
+                # code...
+                $result = \Dao\Mnt\Categorias::nuevaCategoria(
+                    $this->_viewData["catnom"],
+                    $this->_viewData["catest"]
+                );
+                if ($result) {
+                    \Utilities\Site::redirectToWithMsg(
+                        'index.php?page=mnt.categorias.categorias',
+                        "¡Categoría guardada satisfactoriamente!"
+                    );
+                }
+                break;
+            case 'UPD':
+                $result = \Dao\Mnt\Categorias::actualizarCategoria(
+                    $this->_viewData["catnom"],
+                    $this->_viewData["catest"],
+                    $this->_viewData["catid"]
+                );
+                if ($result) {
+                    \Utilities\Site::redirectToWithMsg(
+                        'index.php?page=mnt.categorias.categorias',
+                        "¡Categoría actualizada satisfactoriamente!"
+                    );
+                }
+                break;
+            case 'DEL':
+                $result = \Dao\Mnt\Categorias::eliminarCategoria(
+                    $this->_viewData["catid"]
+                );
+                if ($result) {
+                    \Utilities\Site::redirectToWithMsg(
+                        'index.php?page=mnt.categorias.categorias',
+                        "¡Categoría eliminada satisfactoriamente!"
+                    );
+                }
+                break;
+            default:
+                # code...
+                break;
+            }
+        }
     }
     private function prepareViewData()
     {
         if ($this->_viewData["mode"] == "INS") {
-
+             $this->_viewData["modeDsc"]
+                 = $this->_modeStrings[$this->_viewData["mode"]];
         } else {
             $tmpCategoria = \Dao\Mnt\Categorias::obtenerPorCatId(
                 intval($this->_viewData["catid"], 10)

@@ -1,7 +1,7 @@
-<h1>Trabajando con Categoría</h1>
+<h1>{{modeDsc}}</h1>
 <hr>
 <section class="container-m">
-  <form action="index.php?page=mnt.categorias.categoria" method="post" >
+  <form action="index.php?page=mnt.categorias.categoria&mode={{mode}}&catid={{catid}}" method="post" >
     {{ifnot isInsert}}
     <fieldset class="row flex-center align-center">
         <label for="catid" class="col-5">Código</label>
