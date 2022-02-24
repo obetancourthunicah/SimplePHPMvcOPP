@@ -24,7 +24,8 @@ class Categoria extends PublicController
         "modeDsc"=>"",
         "readonly"=>false,
         "isInsert"=>false,
-        "catestOptions"=>[]
+        "catestOptions"=>[],
+        "crsxToken"=>""
     );
     private function init(){
         if (isset($_GET["mode"])) {
@@ -50,6 +51,19 @@ class Categoria extends PublicController
     private function handlePost()
     {
         \Utilities\ArrUtils::mergeFullArrayTo($_POST, $this->_viewData);
+
+
+        if (!(isset($_SESSION["categoria_crsxToken"])
+            && $_SESSION["categoria_crsxToken"] == $this->_viewData["crsxToken"] )
+        ) {
+            unset($_SESSION["categoria_crsxToken"]);
+            \Utilities\Site::redirectToWithMsg(
+                'index.php?page=mnt.categorias.categorias',
+                'Ocurrio un error, no se puede procesar el formulario.'
+            );
+        }
+
+
         $this->_viewData["catid"] = intval($this->_viewData["catid"], 10);
         if (!\Utilities\Validators::isMatch(
             $this->_viewData["catest"],
@@ -62,6 +76,7 @@ class Categoria extends PublicController
         if (isset($this->_viewData["errors"]) && count($this->_viewData["errors"]) > 0 ) {
 
         } else {
+            unset($_SESSION["categoria_crsxToken"]);
             switch ($this->_viewData["mode"]) {
             case 'INS':
                 # code...
@@ -130,6 +145,9 @@ class Categoria extends PublicController
                 'selected',
                 $this->_viewData['catest']
             );
+
+        $this->_viewData["crsxToken"] = md5(time()."categoria");
+        $_SESSION["categoria_crsxToken"] = $this->_viewData["crsxToken"]; 
     }
     public function run(): void
     {

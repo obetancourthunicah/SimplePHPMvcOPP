@@ -2,6 +2,7 @@
 <hr>
 <section class="container-m">
   <form action="index.php?page=mnt.categorias.categoria&mode={{mode}}&catid={{catid}}" method="post" >
+    <input type="hidden" name="crsxToken" value="{{crsxToken}}" />
     {{ifnot isInsert}}
     <fieldset class="row flex-center align-center">
         <label for="catid" class="col-5">Código</label>
