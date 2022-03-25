@@ -1,10 +1,11 @@
 <?php
 namespace Controllers\Mnt\Categorias;
 
-use Controllers\PublicController;
+use Controllers\PrivateController;
+//use Controllers\PublicController;
 use Views\Renderer;
 
-class Categoria extends PublicController
+class Categoria extends PrivateController
 {
     private $_modeStrings = array(
         "INS" => "Nueva Categoría",
