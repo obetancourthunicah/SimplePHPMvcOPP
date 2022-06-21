@@ -17,6 +17,8 @@
 // ---------------------------------------------------------------
 use Controllers\PublicController;
 use Views\Renderer;
+use Utilities\Validators;
+use Dao\Mnt\Productos;
 
 /**
  * Producto
@@ -128,14 +130,62 @@ class Producto extends PublicController
         }
         if ($this->viewData["mode"] !== "INS" && isset($_GET["id"])) {
             $this->viewData["invPrdId"] = intval($_GET["id"]);
-            $tmpProducto = \Dao\Mnt\Productos::getById($this->viewData["invPrdId"]);
+            $tmpProducto = Productos::getById($this->viewData["invPrdId"]);
             error_log(json_encode($tmpProducto));
             \Utilities\ArrUtils::mergeFullArrayTo($tmpProducto, $this->viewData);
         }
     }
     private function procesarPost()
     {
-
+        // Validar la entrada de Datos
+        //  Todos valor puede y sera usando en contra del sistema
+        $hasErrors = false;
+        \Utilities\ArrUtils::mergeArrayTo($_POST, $this->viewData);
+        
+        if (Validators::IsEmpty($this->viewData["invPrdBrCod"])) {
+            $this->viewData["error_invPrdBrCod"][]
+                = "El código de Barras es requerido";
+            $hasErrors = true;
+        }
+        if (Validators::IsEmpty($this->viewData["invPrdCodInt"])) {
+            $this->viewData["error_invPrdCodInt"][]
+                = "El código interno es requerido";
+            $hasErrors = true;
+        }
+        if (Validators::IsEmpty($this->viewData["invPrdDsc"])) {
+            $this->viewData["error_invPrdDsc"][]
+                = "La descripción es requerida";
+            $hasErrors = true;
+        }
+        error_log(json_encode($this->viewData));
+        // Ahora procedemos con las modificaciones al registro
+        if (!$hasErrors) {
+            $result = null;
+            switch($this->viewData["mode"]) {
+            case 'INS':
+                $result = Productos::insert(
+                    $this->viewData["invPrdBrCod"],
+                    $this->viewData["invPrdCodInt"],
+                    $this->viewData["invPrdDsc"],
+                    $this->viewData["invPrdTip"],
+                    $this->viewData["invPrdEst"],
+                    null,
+                    1,
+                    $this->viewData["invPrdVnd"]
+                );
+                if ($result) {
+                        \Utilities\Site::redirectToWithMsg(
+                            "index.php?page=mnt_productos",
+                            "Producto Guardado Satisfactoriamente!"
+                        );
+                }
+                break;
+            case 'UPD':
+                break;
+            case 'DEL':
+                break;
+            }
+        }
     }
 
     private function processView()
@@ -148,27 +198,30 @@ class Producto extends PublicController
                 $this->viewData["invPrdCodInt"],
                 $this->viewData["invPrdDsc"]
             );
-            $this->viewData["invPrdTipArr"] = \Utilities\ArrUtils::objectArrToOptionsArray(
-                $this->arrProductoTipo,
-                'value',
-                'text',
-                'value',
-                $this->viewData["invPrdTip"]
-            );
-            $this->viewData["invPrdEstArr"] = \Utilities\ArrUtils::objectArrToOptionsArray(
-                $this->arrEstados,
-                'value',
-                'text',
-                'value',
-                $this->viewData["invPrdEst"]
-            );
-            $this->viewData["invPrdVndArr"] = \Utilities\ArrUtils::objectArrToOptionsArray(
-                $this->arrProductoVendible,
-                'value',
-                'text',
-                'value',
-                $this->viewData["invPrdVnd"]
-            );
+            $this->viewData["invPrdTipArr"]
+                = \Utilities\ArrUtils::objectArrToOptionsArray(
+                    $this->arrProductoTipo,
+                    'value',
+                    'text',
+                    'value',
+                    $this->viewData["invPrdTip"]
+                );
+            $this->viewData["invPrdEstArr"]
+                = \Utilities\ArrUtils::objectArrToOptionsArray(
+                    $this->arrEstados,
+                    'value',
+                    'text',
+                    'value',
+                    $this->viewData["invPrdEst"]
+                );
+            $this->viewData["invPrdVndArr"]
+                = \Utilities\ArrUtils::objectArrToOptionsArray(
+                    $this->arrProductoVendible,
+                    'value',
+                    'text',
+                    'value',
+                    $this->viewData["invPrdVnd"]
+                );
         }
     }
 }

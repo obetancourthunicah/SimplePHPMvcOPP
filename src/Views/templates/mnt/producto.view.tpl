@@ -10,7 +10,7 @@
       {{if error_invPrdBrCod}}
         {{foreach error_invPrdBrCod}}
           <div class="error">{{this}}</div>
-        {{foreach error_invPrdBrCod}}
+        {{endfor error_invPrdBrCod}}
       {{endif error_invPrdBrCod}}
     </fieldset>
     <fieldset>
@@ -19,7 +19,7 @@
       {{if error_invPrdCodInt}}
         {{foreach error_invPrdCodInt}}
           <div class="error">{{this}}</div>
-        {{foreach error_invPrdCodInt}}
+        {{endfor error_invPrdCodInt}}
       {{endif error_invPrdCodInt}}
     </fieldset>
     <fieldset>
@@ -28,7 +28,7 @@
       {{if error_invPrdDsc}}
           {{foreach error_invPrdDsc}}
             <div class="error">{{this}}</div>
-          {{foreach error_invPrdDsc}}
+          {{endfor error_invPrdDsc}}
       {{endif error_invPrdDsc}}
     </fieldset>
     <fieldset>

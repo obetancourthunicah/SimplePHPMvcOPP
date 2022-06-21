@@ -11,7 +11,7 @@
         <th>Tipo</th>
         <th>Estado</th>
         <th>Vendible</th>
-        <th><a href="index.php?page=Mnt-Producto&mode=INS"></a></th>
+        <th><a href="index.php?page=Mnt-Producto&mode=INS">Nuevo</a></th>
       </tr>
     </thead>
     <tbody>
