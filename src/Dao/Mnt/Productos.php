@@ -45,12 +45,39 @@ class Productos extends Table
      *
      * @return array
      */
-    public static function getAll ()
+    public static function getAll()
     {
         $sqlstr = "Select * from productos;";
         return self::obtenerRegistros($sqlstr, array());
     }
+    /**
+     * Get Producto By Id
+     *
+     * @param int $invPrdId Codigo del Producto
+     *
+     * @return array
+     */
+    public static function getById(int $invPrdId)
+    {
+        $sqlstr = "SELECT * from `productos` where invPrdId=:invPrdId;";
+        $sqlParams = array("invPrdId" => $invPrdId);
+        return self::obtenerUnRegistro($sqlstr, $sqlParams);
+    }
 
+    /**
+     * Insert into Productos
+     *
+     * @param [type] $invPrdBrCod  description
+     * @param [type] $invPrdCodInt description
+     * @param [type] $invPrdDsc    description
+     * @param [type] $invPrdTip    description
+     * @param [type] $invPrdEst    description
+     * @param [type] $invPrdPadre  description
+     * @param [type] $invPrdFactor description
+     * @param [type] $invPrdVnd    description
+     *
+     * @return void
+     */
     public static function insert(
         $invPrdBrCod,
         $invPrdCodInt,
@@ -82,4 +109,5 @@ VALUES
         ];
         return self::executeNonQuery($sqlstr, $sqlParams);
     }
+
 }

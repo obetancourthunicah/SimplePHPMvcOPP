@@ -1,4 +1,4 @@
-<h1>Gestionar Producto</h1>
+<h1>{{mode_desc}}</h1>
 <section>
   <form action="index.php?page=mnt_producto" method="post">
     <input type="hidden" name="mode" value="{{mode}}" />
@@ -40,7 +40,7 @@
       </select>
     </fieldset>
     <fieldset>
-      <label for="invPrdEst"></label>
+      <label for="invPrdEst">Estado</label>
       <select name="invPrdEst" id="invPrdEst">
         {{foreach invPrdEstArr}}
         <option value="{{value}}" {{selected}}>{{text}}</option>
@@ -48,7 +48,7 @@
       </select>
     </fieldset>
     <fieldset>
-      <label for="invPrdVnd"></label>
+      <label for="invPrdVnd">Es Vendible</label>
       <select name="invPrdVnd" id="invPrdVnd">
         {{foreach invPrdVndArr}}
         <option value="{{value}}" {{selected}}>{{text}}</option>
@@ -64,7 +64,9 @@
 </section>
 <script>
   document.addEventListener('DOMContentLoaded', function(){
-    document.getElementById('btnCancelar').addEventListener('click', function(){
+    document.getElementById('btnCancelar').addEventListener('click', function(e){
+      e.preventDefault();
+      e.stopPropagation();
       window.location.href = 'index.php?page=mnt_productos';
     });
   });
