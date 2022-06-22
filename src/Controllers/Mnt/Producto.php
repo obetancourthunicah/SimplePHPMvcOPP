@@ -79,6 +79,8 @@ class Producto extends PublicController
         $this->viewData["invPrdVnd"] = "";
         $this->viewData["invPrdVndArr"] = array();
         $this->viewData["btnEnviarText"] = "Guardar";
+        $this->viewData["readonly"] = false;
+        $this->viewData["showBtn"] = true;
 
         $this->arrModeDesc = array(
             "INS"=>"Nuevo Producto",
@@ -141,7 +143,15 @@ class Producto extends PublicController
         //  Todos valor puede y sera usando en contra del sistema
         $hasErrors = false;
         \Utilities\ArrUtils::mergeArrayTo($_POST, $this->viewData);
-        
+        if (isset($_SESSION[$this->name . "crsf_token"])
+            && $_SESSION[$this->name . "crsf_token"] !== $this->viewData["crsf_token"]
+        ) {
+            \Utilities\Site::redirectToWithMsg(
+                "index.php?page=mnt_productos",
+                "ERROR: Algo inesperado sucedió con la petición Intente de nuevo."
+            );
+        }
+
         if (Validators::IsEmpty($this->viewData["invPrdBrCod"])) {
             $this->viewData["error_invPrdBrCod"][]
                 = "El código de Barras es requerido";
@@ -181,8 +191,34 @@ class Producto extends PublicController
                 }
                 break;
             case 'UPD':
+                $result = Productos::update(
+                    $this->viewData["invPrdBrCod"],
+                    $this->viewData["invPrdCodInt"],
+                    $this->viewData["invPrdDsc"],
+                    $this->viewData["invPrdTip"],
+                    $this->viewData["invPrdEst"],
+                    null,
+                    1,
+                    $this->viewData["invPrdVnd"],
+                    intval($this->viewData["invPrdId"])
+                );
+                if ($result) {
+                    \Utilities\Site::redirectToWithMsg(
+                        "index.php?page=mnt_productos",
+                        "Producto Actualizado Satisfactoriamente"
+                    );
+                }
                 break;
             case 'DEL':
+                $result = Productos::delete(
+                    intval($this->viewData["invPrdId"])
+                );
+                if ($result) {
+                    \Utilities\Site::redirectToWithMsg(
+                        "index.php?page=mnt_productos",
+                        "Producto Eliminado Satisfactoriamente"
+                    );
+                }
                 break;
             }
         }
@@ -192,6 +228,7 @@ class Producto extends PublicController
     {
         if ($this->viewData["mode"] === "INS") {
             $this->viewData["mode_desc"]  = $this->arrModeDesc["INS"];
+            $this->viewData["btnEnviarText"] = "Guardar Nuevo";
         } else {
             $this->viewData["mode_desc"]  = sprintf(
                 $this->arrModeDesc[$this->viewData["mode"]],
@@ -222,6 +259,19 @@ class Producto extends PublicController
                     'value',
                     $this->viewData["invPrdVnd"]
                 );
+            if ($this->viewData["mode"] === "DSP") {
+                $this->viewData["readonly"] = true;
+                $this->viewData["showBtn"] = false;
+            }
+            if ($this->viewData["mode"] === "DEL") {
+                $this->viewData["readonly"] = true;
+                $this->viewData["btnEnviarText"] = "Eliminar";
+            }
+            if ($this->viewData["mode"] === "UPD") {
+                $this->viewData["btnEnviarText"] = "Actualizar";
+            }
         }
+        $this->viewData["crsf_token"] = md5(getdate()[0] . $this->name);
+        $_SESSION[$this->name . "crsf_token"] = $this->viewData["crsf_token"];
     }
 }

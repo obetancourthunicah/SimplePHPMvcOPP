@@ -109,5 +109,65 @@ VALUES
         ];
         return self::executeNonQuery($sqlstr, $sqlParams);
     }
+    /**
+     * Updates productos
+     *
+     * @param [type] $invPrdBrCod  description
+     * @param [type] $invPrdCodInt description
+     * @param [type] $invPrdDsc    description
+     * @param [type] $invPrdTip    description
+     * @param [type] $invPrdEst    description
+     * @param [type] $invPrdPadre  description
+     * @param [type] $invPrdFactor description
+     * @param [type] $invPrdVnd    description
+     * @param [type] $invPrdId     description
+     *
+     * @return void
+     */
+    public static function update(
+        $invPrdBrCod,
+        $invPrdCodInt,
+        $invPrdDsc,
+        $invPrdTip,
+        $invPrdEst,
+        $invPrdPadre,
+        $invPrdFactor,
+        $invPrdVnd,
+        $invPrdId
+    ) {
+        $sqlstr = "UPDATE `productos` set
+`invPrdBrCod`=:invPrdBrCod, `invPrdCodInt`=:invPrdCodInt,
+`invPrdDsc`=:invPrdDsc, `invPrdTip`=:invPrdTip, `invPrdEst`=:invPrdEst,
+`invPrdPadre`=:invPrdPadre, `invPrdFactor`=:invPrdFactor, `invPrdVnd`=:invPrdVnd
+ where `invPrdId` = :invPrdId;";
+        $sqlParams = array(
+            "invPrdBrCod" => $invPrdBrCod,
+            "invPrdCodInt" => $invPrdCodInt,
+            "invPrdDsc" => $invPrdDsc,
+            "invPrdTip" => $invPrdTip,
+            "invPrdEst" => $invPrdEst,
+            "invPrdPadre" => $invPrdPadre,
+            "invPrdFactor" => $invPrdFactor,
+            "invPrdVnd" => $invPrdVnd,
+            "invPrdId" => $invPrdId
+        );
+        return self::executeNonQuery($sqlstr, $sqlParams);
+    }
+
+    /**
+     * Undocumented function
+     *
+     * @param [type] $invPrdId description
+     *
+     * @return void
+     */
+    public static function delete($invPrdId)
+    {
+        $sqlstr = "DELETE from `productos` where invPrdId = :invPrdId;";
+        $sqlParams = array(
+            "invPrdId" => $invPrdId
+        );
+        return self::executeNonQuery($sqlstr, $sqlParams);
+    }
 
 }
