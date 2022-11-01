@@ -50,7 +50,8 @@ class Quote extends PublicController {
             \Utilities\ArrUtils::mergeFullArrayTo($dbQuote, $this->viewData);
         }
     }
-    private function process_postback(){
+    private function process_postback()
+    {
         if ($this->validate_inputs()){
             switch($this->viewData["mode"]){
                 case "INS":
@@ -65,15 +66,16 @@ class Quote extends PublicController {
             }
         }
     }
-    private function validate_inputs(){
+    private function validate_inputs()
+    {
         $this->viewData["quote"] = $_POST["quote"];
         $this->viewData["author"] = $_POST["author"];
         $this->viewData["status"] = $_POST["status"];
         // Validar las Entradas de Datos
         return true;
     }
-
-    private function on_update_clicked(){
+    private function on_update_clicked()
+    {
         $updateResult = \Dao\Mnt\Quotes::updateQuote(
                 $this->viewData["quote"],
                 $this->viewData["author"],
@@ -87,7 +89,8 @@ class Quote extends PublicController {
             );
         }
     }
-    private function on_delete_clicked(){
+    private function on_delete_clicked()
+    {
         $deleteResult = \Dao\Mnt\Quotes::deleteQuote(
                 $this->viewData["quoteId"]
         );
@@ -98,7 +101,8 @@ class Quote extends PublicController {
             );
         }
     }
-    private function on_insert_clicked(){
+    private function on_insert_clicked()
+    {
         $insertResult = \Dao\Mnt\Quotes::AgregarQuote(
                 $this->viewData["quote"],
                 $this->viewData["author"],
@@ -111,7 +115,8 @@ class Quote extends PublicController {
             );
         }
     }
-    private function pre_render(){
+    private function pre_render()
+    {
         $this->viewData["act_selected"] = $this->viewData["status"] === "ACT";
         $this->viewData["ina_selected"] = $this->viewData["status"] === "INA";
         if($this->viewData["mode"]!=='INS') {
