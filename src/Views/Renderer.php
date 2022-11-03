@@ -70,6 +70,10 @@ class Renderer
                     $tmphtml,
                     $htmlContent
                 );
+                //Cargar Otras plantillas
+                if(strpos($htmlContent, "{{include")){
+                    $htmlContent = self::loadPartials($htmlContent);
+                }
                 //Limpiar Saltos de Pagina
                 if (strpos($htmlContent, "<pre>")) {
                 } else {
@@ -379,6 +383,41 @@ class Renderer
         );
 
         return $template_code;
+    }
+
+    private static function loadPartials($htmlTemplate)
+    {
+        $regexp_array = array(
+            'includes '      => '(\{\{include [\w\/]*\}\})',
+        );
+
+        $tag_regexp = "/" . join("|", $regexp_array) . "/";
+
+        //split the code with the tags regexp
+        $template_code = preg_split(
+            $tag_regexp,
+            $htmlTemplate,
+            -1,
+            PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY
+        );
+        $htmlBuffer = "";
+        foreach($template_code as $block) {
+            if (strpos($block, "include")) {
+                $filePath = trim(
+                        str_replace("}}", "", str_replace("{{include", "", $block))
+                ). ".view.tpl";;
+                $viewsPath = "src/Views/templates/";
+                if (file_exists($viewsPath . $filePath)) {
+                    $htmlContent = file_get_contents($viewsPath . $filePath);
+                    $htmlBuffer .= $htmlContent;
+                } else {
+                    $htmlBuffer .= $block;
+                }
+            } else {
+                $htmlBuffer .= $block;
+            }
+        }
+        return $htmlBuffer;
     }
 
     public static function rewriteUrl($htmlTemplate)

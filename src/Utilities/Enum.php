@@ -5,11 +5,11 @@ namespace Utilities;
 abstract class Enum
 {
     const NONE = null;
-    final private function __construct()
+    private function __construct()
     {
         throw new NotSupportedException(); // 
     }
-    final private function __clone()
+    private function __clone()
     {
         throw new NotSupportedException();
     }
@@ -26,7 +26,7 @@ abstract class Enum
         }
         return $formated;
     }
-    
+
     final public static function isValid($value)
     {
         return in_array($value, static::toArray());

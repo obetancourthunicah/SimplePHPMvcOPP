@@ -33,4 +33,5 @@
       {{endfor quotes}}
     </tbody>
   </table>
+  {{include mnt/debug}}
 </section>
