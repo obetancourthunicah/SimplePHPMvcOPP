@@ -1,0 +1,19 @@
+Check List para Seguridad
+
+
+Premisas:
+1) Cada Vista | Controlador  es una funcion de la aplicacion
+2) Cada llamada a isAuthorized | isFeatureAuthorized de Instancias Heredadas de PrivateController es una funcion de la aplicacion
+3) El acceso es otorgado al usuario que petenesca a algun rol que tenga autorizado la funcion.
+
+Pasos:
+
+1) Definir los Roles requeridos para la aplicacion
+  1) cliente
+  2) administrador
+  3) sysadmin
+  4) logistica
+
+2) Definir cuales vistas |controladores y features van a estar asociados a cada rol
+
+  2.1) Features puede ser el visualizar un boton, ver un campo de la vista, ver una columna de la tabla mostrar el formulario segun un modo etc...

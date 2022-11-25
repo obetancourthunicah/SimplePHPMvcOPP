@@ -14,7 +14,7 @@ class Site
     {
         $pageRequest = "index";
         if (\Utilities\Security::isLogged()) {
-            $pageRequest = "admin\\admin";
+            $pageRequest = "Mnt\\Quotes";
         }
         if (isset($_GET["page"])) {
             $pageRequest = str_replace(array("_", "-", "."), "\\", $_GET["page"]);

@@ -23,7 +23,7 @@
       <div class="hmb hrz"></div>
       <div class="hmb dgn pt-2"></div>
     </label>
-    <h1>Hola Mundo {{SITE_TITLE}}</h1>
+    <h1>{{SITE_TITLE}}</h1>
     <nav id="menu">
       <ul>
         <li><a href="index.php?page=index"><i class="fas fa-home"></i>&nbsp;Inicio</a></li>
